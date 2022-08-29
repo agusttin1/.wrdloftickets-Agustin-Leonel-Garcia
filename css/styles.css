@@ -1,0 +1,703 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Open+Sans:ital@1&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: black;
+  height: auto;
+  width: 100%;
+  position: relative;
+  border-top: rgb(233, 228, 29) 5px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .menu {
+  display: flex;
+  width: auto;
+  justify-content: flex-end;
+}
+
+header .cont-logo figure img {
+  height: 70px;
+}
+
+.cont-logo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: auto;
+}
+
+.menu .cont-secciones {
+  display: flex;
+  list-style-type: none;
+}
+
+.cont-secciones .secciones {
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins";
+}
+
+.secciones .secciones-link {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+.secciones-link::after {
+  content: "";
+  background: #e9e41d;
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+}
+
+.cont-secciones .secciones-link:hover::after {
+  width: 50%;
+}
+
+.menu .btn-menu {
+  display: none;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.home-inicio, .home-inicio-concierto {
+  background: url(../images/img-banner-inicio/banner-inicio.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.home-inicio::before, .home-inicio-concierto::before {
+  content: "";
+  width: 100%;
+  height: 90vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+}
+
+.home-inicio .home-text, .home-inicio-concierto .home-text {
+  line-height: 3.5rem;
+  display: block;
+  font-family: "Poppins";
+  font-size: 24px;
+  z-index: 1;
+  margin: 0 45px;
+}
+
+.home-inicio .home-text h1, .home-inicio-concierto .home-text h1 {
+  color: white;
+}
+
+.home-inicio .home-text span, .home-inicio-concierto .home-text span {
+  color: #e9e41d;
+}
+
+.home-inicio .home-text .btn, .home-inicio-concierto .home-text .btn {
+  text-decoration: none;
+  font-family: "Bungee";
+  color: #e9e41d;
+  border: 1px solid #e9e41d;
+  padding: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.home-text .btn .flecha-btn {
+  margin-left: 10px;
+}
+
+.home-text .btn:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.sobre-nosotros {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: black;
+  margin: 50px 0;
+}
+
+.sobre-nosotros .titulo-nosotros {
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.titulo-nosotros h2 {
+  font-size: 40px;
+  font-family: "Bungee";
+  color: #e9e41d;
+  padding: 10px;
+}
+
+.sobre-nosotros .text-nosotros {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  line-height: 2.5;
+  font-family: "Poppins";
+}
+
+.sobre-nosotros .lema-cont {
+  color: white;
+  font-size: 20px;
+  font-family: "Poppins";
+  line-height: 2;
+}
+
+.testimonios {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.testimonios-cont .testimonios-header {
+  margin-top: 35px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.testimonios-cont .testimonios-header h2 {
+  font-size: 40px;
+  font-family: "Bungee";
+  color: #e9e41d;
+  padding: 10px;
+}
+
+.testimonios-cont .testimonios-header span {
+  font-size: 24px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "bungee";
+}
+
+.testimonios .testimonios-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  font-family: "Poppins";
+  position: relative;
+  background-color: black;
+}
+
+.testimonios-cont .box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonios-cont .box-testimonio {
+  width: 500px;
+  box-shadow: 2px 2px 20px black;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.testimonios-cont .perfil-user .user-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonios-cont .perfil-user img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.box-testimonio .perfil-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.perfil-user .name-user {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.testimonios-cont .box-reseñas-stars {
+  color: #e9e41d;
+}
+
+.artistas {
+  flex-wrap: wrap;
+  display: flex;
+  height: auto;
+  width: 100%;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.artistas .artistas-cont {
+  background-color: #e9e41d;
+  display: flex;
+  border-radius: 10px 0 0 10px;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.artistas .header-artistas {
+  margin-top: 35px;
+  padding: 12px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.artistas .header-artistas span {
+  padding: 10px;
+  font-size: 24px;
+  font-family: "Bungee";
+  color: black;
+}
+
+.artistas .header-artistas h2 {
+  padding: 10px;
+  font-size: 40px;
+  font-family: "Bungee";
+  color: white;
+}
+
+.artistas .cont-lista-artistas {
+  padding-bottom: 32px;
+  padding-top: 32px;
+  width: 100%;
+}
+
+.artistas .cont-lista-artistas .cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top: black 4px solid;
+  border-bottom: black 4px solid;
+  width: 100%;
+}
+
+.artistas .cont-lista-artistas .cards .card-artista {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  padding-right: 16px;
+  display: block;
+  transition: all 0.9s ease-in-out;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.card-artista:hover {
+  transform: scale(1.1);
+}
+
+.card-artista .position-target {
+  position: absolute;
+  top: 10px;
+  z-index: 2222222;
+  left: 15px;
+  border-radius: 4px;
+  display: flex;
+  color: #e9e41d;
+  background-color: rgba(31, 31, 31, 0.8);
+  padding: 5px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.artistas .cont-lista-artistas .cards .card-artista .img-container {
+  height: 150px;
+  width: 150px;
+  border-radius: 20%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-artista .img-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-artista .img-container::before {
+  background: linear-gradient(180deg, rgba(31, 31, 31, 0), #1f1f1f 90.76%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.card-artista .contenido-container {
+  position: absolute;
+  z-index: 88882;
+  bottom: 12px;
+  left: 12px;
+  color: white;
+  font-family: "Poppins";
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  color: #e9e41d;
+  border-top: 4px solid #e9e41d;
+  font-family: "bungee";
+}
+
+footer .cont-footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 15px;
+  padding: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  header .cont-logo figure a img {
+    height: 50px;
+  }
+  .home-inicio .home-text, .home-inicio-concierto .home-text {
+    margin: 0;
+    margin-left: 10px;
+  }
+  .home-inicio .home-text h1, .home-inicio-concierto .home-text h1 {
+    font-size: 25px;
+  }
+  .home-text span {
+    font-size: 18px;
+  }
+  .sobre-nosotros .titulo-nosotros h2 {
+    font-size: 25px;
+  }
+  .sobre-nosotros .text-nosotros p {
+    font-size: 16px;
+  }
+  .sobre-nosotros .lema-cont h4 {
+    font-size: 18px;
+  }
+  .artistas .header-artistas h2 {
+    font-size: 25px;
+  }
+  .artistas .header-artistas span {
+    font-size: 18px;
+  }
+  .testimonios .testimonios-header h2 {
+    font-size: 25px;
+  }
+  .testimonios .testimonios-header span {
+    font-size: 18px;
+  }
+}
+@media (min-width: 600px) and (max-width: 850px) {
+  .sobre-nosotros .titulo-nosotros h2 {
+    font-size: 30px;
+  }
+  .sobre-nosotros .text-nosotros p {
+    font-size: 18px;
+  }
+  .sobre-nosotros .lema-cont h4 {
+    font-size: 18px;
+  }
+  .artistas .header-artistas h2 {
+    font-size: 30px;
+  }
+  .artistas .header-artistas span {
+    font-size: 20px;
+  }
+  .testimonios .testimonios-header h2 {
+    font-size: 30px;
+  }
+  .testimonios .testimonios-header span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .menu {
+    display: inline-block;
+    position: relative;
+  }
+  .menu .cont-secciones {
+    position: absolute;
+    max-width: 300px;
+    visibility: hidden;
+    transition: all 250ms ease-in-out;
+    transform: scaleY(0.1);
+    transform-origin: top right;
+    z-index: 999999999;
+    background: black;
+    list-style: none;
+    right: 20px;
+    top: 40px;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid #e9e41d;
+  }
+  .menu .btn-menu {
+    display: block;
+    margin-right: 10px;
+    font-size: 28px;
+    color: #e9e41d;
+  }
+  .menu .cont-secciones .secciones-link {
+    text-align: center;
+    color: #e9e41d;
+    width: 140px;
+    display: block;
+    font-size: 16px;
+  }
+  #menu-btn-check {
+    display: none;
+  }
+  #menu-btn-check:checked + ul.cont-secciones {
+    transform: scaleY(1);
+    visibility: visible;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  color: #e9e41d;
+}
+
+.home-inicio-concierto {
+  background-image: url(../images/img-banner-inicio/banner-concierto.jpg);
+}
+
+.features-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.features-cont .features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins";
+}
+
+.features .feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.features .feature-descrip {
+  color: gray;
+  width: 50%;
+  height: auto;
+}
+
+.features-cont .features .featuresImg {
+  width: 80px;
+  height: 80px;
+  color: red;
+}
+
+.all-cont-event {
+  background-image: url(../images/img-banner-inicio/banner-inicio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.all-cont-event::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(233, 228, 29, 0.1);
+  z-index: -2;
+}
+
+.all-cont-event .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cont-filtros {
+  box-shadow: 2px 2px 10px black;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 15px;
+  background-color: white;
+}
+
+.cont-filtros .selector-musica .form-control {
+  color: black;
+  font-weight: 1000;
+  font-family: "Poppins";
+  border: 2px solid #e9e41d;
+  box-shadow: none;
+}
+
+.cont-filtros .selector-pais .form-control {
+  color: black;
+  font-weight: 1000;
+  font-family: "Poppins";
+  border: 2px solid #e9e41d;
+  box-shadow: none;
+}
+
+.cont-filtros .selector-pais .form-control option:hover {
+  background-color: #e9e41d;
+}
+
+.cont-filtros .titulo-filtros {
+  font-family: "Bungee";
+  color: black;
+  padding: 10px;
+}
+
+.titulo-filtros h3::before {
+  content: "/";
+  font-size: small;
+  color: #e9e41d;
+  margin-right: 10px;
+}
+
+.cont-filtros .row {
+  padding-bottom: 40px;
+}
+
+.cont-filtros .row .selector-musica {
+  margin-bottom: 10px;
+}
+
+.cont-eventos {
+  box-shadow: 2px 2px 10px black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.cont-eventos .title-events {
+  font-family: "Bungee";
+  color: black;
+  padding: 10px;
+  padding-bottom: 25px;
+}
+
+.cont-eventos .title-events h3::before {
+  content: "/";
+  font-size: small;
+  color: #e9e41d;
+  margin-right: 10px;
+  font-weight: 800;
+}
+
+.card {
+  font-family: "Poppins";
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed black;
+}
+
+.card .card-body .btn-primary {
+  background-color: #e9e41d;
+  border: 1px solid white;
+  font-family: "Poppins";
+  color: black;
+  font-weight: 800;
+  justify-content: center;
+}
+
+.card .card-body .btn-primary:hover {
+  border: 1px solid black;
+  color: #e9e41d;
+  background-color: white;
+}
+
+.card .price-event {
+  position: absolute;
+  right: 0;
+  background: white;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #e9e41d;
+  font-weight: 600;
+  top: 5px;
+}
+
+.card .pais-artist {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  box-shadow: 2px 2px 10px #e9e41d;
+}
+
+.card .pais-artist img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .features-cont {
+    flex-direction: column;
+  }
+  .features-cont .features {
+    margin-top: 40px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

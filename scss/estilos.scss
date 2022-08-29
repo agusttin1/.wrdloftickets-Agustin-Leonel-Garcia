@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Open+Sans:ital@1&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
-
+$color1 :  #e9e41d;
 * {
   margin: 0;
   padding: 0;
@@ -12,16 +12,16 @@ header {
   height: auto;
   width: 100%;
   position: relative;
-  border-top: #e9e41d 5px solid;
+  border-top: rgb(233, 228, 29) 5px solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header nav {
+header .menu {
   display: flex;
   width: auto;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
 header .cont-logo figure img {
@@ -37,6 +37,7 @@ header .cont-logo figure img {
 
 .menu .cont-secciones {
   display: flex;
+  list-style-type:none;
 }
 
 .cont-secciones .secciones {
@@ -76,21 +77,8 @@ header .cont-logo figure img {
     display: none;
 }
 
-.cont-login a {
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  transition: all 0.5s;
-  margin-right: 15px;
-}
-.cont-login a:hover {
-  border: 1px solid #e9e41d;
-  color: #e9e41d;
-}
-
 .home-inicio {
-  background: url("./images/img-banner-inicio/concert_295115348.jpg");
+  background: url(../images/img-banner-inicio/banner-inicio.jpg);
   background-size: cover;
   width: 100%;
   height: 90vh;
@@ -531,3 +519,7 @@ header .cont-logo figure a img {
     visibility: visible;
   }
 }
+
+
+
+@import "_conciertos.scss";
