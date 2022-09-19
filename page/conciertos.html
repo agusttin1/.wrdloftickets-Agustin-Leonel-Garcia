@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="16x16"  href="../logo.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/styles.css" />
     <title>.Wrld of ticket's | Conciertos</title>
   </head>
-  <body>
+  <body">
     <header>
       <div class="cont-logo">
         <figure>
@@ -18,271 +18,100 @@
         </figure>
       </div>
 
-      <nav class="menu">
-        <label for="menu-btn-check" id="menu-btn"><i class="fa-solid fa-bars btn-menu"></i></label>
-        <input type="checkbox" id="menu-btn-check" />
-
-        <ul class="cont-secciones">
-          <li class="secciones ">
-            <a class="secciones-link" href="../index.html">Inicio</a>
-          </li>
-          <li class="secciones">
-            <a class="secciones-link" href="">Conciertos</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="contAllMenuCarrito d-flex align-items-center mr-5 ">
+        <nav class="menu mt-4">
+          <label for="menu-btn-check" id="menu-btn"><i class="fa-solid fa-bars btn-menu"></i></label>
+          <input type="checkbox" id="menu-btn-check" />
+        
+          <ul class="cont-secciones">
+            <li class="secciones ">
+              <a class="secciones-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="secciones">
+              <a class="secciones-link" href="">Conciertos</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cont-carrito position-relative ">
+          <span class="carrito-compra" id="carrito" style="font-size:50px ; ">🛒</span>
+          <span class="contador-compra position-absolute" id="contador-carrito">0</span>
+        </div>
+      </div>
     </header>
     
-    <section class="home-inicio-concierto">
-      <div class="home-text">
-          <h1>Aca encontraras las entradas</h1>
-          <span>Compra de una forma sencilla, segura y a distancia.</span>
-          <div class="cont-btn">
-    <a href="#entradas" class="btn">Comprar <i class="fa-solid fa-arrow-alt-circle-right flecha-btn"></i></a>
-  </div>
-      </div>
-      </section>
-      </div>
-    <section class="features-cont">
-      <div class="features">
-        <img src="../png/features/credit-card.png" alt="" class="featuresImg">
-        <span class="feature-title">COMPRA RÁPIDO Y SEGURO</span>
-        <span class="feature-descrip">Hacemos lo posible para que le sea más fácil la compra y al mismo tiempo lo más segura.</span>
-      </div>
-      <div class="features">
-        <img src="../png/features/buy-return.png" alt="" class="featuresImg">
-        <span class="feature-title">TE DEVOLVEMOS TU DINERO</span>
-        <span class="feature-descrip">Si no te llego la entrada, te arrepentiste de la compra o lo que sea. ¡Te devolvemos tu dinero en tiempo récord!</span>
-      </div>
-      <div class="features">
-        <img src="../png/features/contact-plane.png" alt="" class="featuresImg">
-        <span class="feature-title">CONTACTANOS A NUESTRO EMAIL</span>
-        <span class="feature-descrip">Si querés dar alguna opinión sobre nuestro sitio o algún reclamo, contactanos a través de nuestro correo.</span>
-      </div>
-      
-      
-    </section>
 
-    <section class="all-cont-event">
-<div class="container">
+     <section class="home-inicio-concierto">
+       <div class="home-text">
+           <h1>Aca encontraras las entradas</h1>
+           <span>Compra de una forma sencilla, segura y a distancia.</span>
+           <div class="cont-btn">
+     <a href="#entradas" class="btn">Comprar <i class="fa-solid fa-arrow-alt-circle-right flecha-btn"></i></a>
+   </div>
+       </div>
+       </section>
+      
+     <section class="features-cont">
+       <div class="features">
+         <img src="../png/features/credit-card.png" alt="" class="featuresImg">
+         <span class="feature-title">COMPRA RÁPIDO Y SEGURO</span>
+         <span class="feature-descrip">Hacemos lo posible para que le sea más fácil la compra y al mismo tiempo lo más segura.</span>
+       </div>
+       <div class="features">
+         <img src="../png/features/buy-return.png" alt="" class="featuresImg">
+         <span class="feature-title">TE DEVOLVEMOS TU DINERO</span>
+         <span class="feature-descrip">Si no te llego la entrada, te arrepentiste de la compra o lo que sea. ¡Te devolvemos tu dinero en tiempo récord!</span>
+       </div>
+       <div class="features">
+         <img src="../png/features/contact-plane.png" alt="" class="featuresImg">
+         <span class="feature-title">CONTACTANOS A NUESTRO EMAIL</span>
+         <span class="feature-descrip">Si querés dar alguna opinión sobre nuestro sitio o algún reclamo, contactanos a través de nuestro correo.</span>
+       </div>
+       
+       
+     </section>
+  
+     <section class="all-cont-event">
+  <div class="container" id="contenedor-eventos">
       <div class="container cont-filtros" id="entradas">
         <div class="titulo-filtros">
           <h3>Filtros</h3>
         </div>
         <div class="row con-selectores">
           <div class="col-sm-1"></div>
-          <div class="col-sm-5 selector-musica">
+          <div class="col-sm-5 selector-musica" id="selectorMusica">
             <select name="" id="categoria-musica" class="form-control">
-              <option value="">Todas las categorias</option>
-              <option value="">Trap</option>
-              <option value="">Hip-Hop/Rap</option>
-              <option value="">Alternativa/Independiente</option>
+              <option value="All">Todas las categorias</option>
+              <option value="Trap">Trap</option>
+              <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
+              <option value="Alternativa/Independiente">Alternativa/Independiente</option>
             </select>
           </div>
-          <div class="col-sm-5 selector-pais">
+          <div class="col-sm-5 selector-pais" id="selectorPais">
             <select name="" id="categoria-pais" class="form-control">
-              <option value="">Artistas de todos los paises</option>
-              <option value="">Argentina</option>
-              <option value="">Estados Unidos</option>
-              <option value="">Inglaterra</option>
+              <option value="allPais" id="allP">Artistas de todos los paises</option>
+              <option value="ARG" id="allARG">Argentina</option>
+              <option value="EEUU" id=" allEEUU">Estados Unidos</option>
+              <option value="UK" id="AllUK">Inglaterra</option>
             </select>
           </div>
           <div class="col-sm-1"></div>
         </div>
       </div>
     
-    <div class="cont-eventos d-flex flex-column justify-content-center container ">
-      <div class="title-events  justify-content-center">
-        <h3>Nuestros conciertos</h3>
-      </div>
+    <div class="cont-eventos d-flex flex-column justify-content-center container " >
+       <div class="title-events  justify-content-center">
+         <h3>Nuestros conciertos</h3>
+       </div>
+   
+   <div class="d-flex flex-row flex-wrap justify-content-center" id="contenedor-productos" >
+       </div> 
+   </div>
   
-  <div class="d-flex lex-row flex-wrap justify-content-center">
-        <div class="card " style="width: 18rem;">
-          <img src="../images/img-artista-inicio/puma-blue.jpg" class="card-img-top" alt="...">
-          <div class="card-body  ">
-            <p>
-              <span>01 oct. 2022</span>
-              <span>· Los Ángeles</span>
-            </p>
-            <p class="card-text">Concierto de Puma Blue en Los Ángeles </p>
-            <a href="#" class="btn btn-primary">Agregar tickets</a>
-          </div>
-          <span class="price-event">$ 3447,04</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/UK.jpg" alt="">
-          </div>
-        </div>
-        <div class="card " style="width: 18rem;">
-          <img src="../images/img-artista-inicio/puma-blue.jpg" class="card-img-top" alt="...">
-          <div class="card-body  ">
-            <p>
-              <span>06 oct. 2022</span>
-              <span>· Dallas</span>
-            </p>
-            <p class="card-text">Concierto de Puma Blue + Arlo Parks</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 7445,60</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/UK.jpg" alt="">
-          </div>
-        </div>
-        <div class="card " style="width: 18rem;">
-          <img src="../images/img-artista-inicio/50-cent.jpg" class="card-img-top" alt="...">
-          <div class="card-body  ">
-            <p>
-              <span>22 sep. 2022</span>
-              <span>· Sevilla</span>
-            </p>
-            <p class="card-text">Concierto de 50 Cent en Icónica Sevilla Fest 2022</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 9358,17</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-      
-        <div class="card " style="width: 18rem;">
-          <img src="../images/img-artista-inicio/50-cent.jpg" class="card-img-top" alt="...">
-          <div class="card-body  ">
-            <p> 
-              <span>28 sep. 2022</span>
-              <span>· Viena</span>
-            </p>
-            <p class="card-text">Concierto de 50 Cent en la Icónica Viena</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 11472,88</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-        <div class="card " style="width: 18rem;">
-          <img src="../images/img-artista-inicio/eminem.jpg" class="card-img-top" alt="...">
-          <div class="card-body  ">
-            <p>
-              <span>01 sept. 2022</span>
-              <span>· Amsterdam </span>
-            </p>
-            <p class="card-text">Concierto de Eminem en Amsterdam</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 10000,43</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/eminem.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p>
-              <span>24 sept. 2022</span>
-              <span>· Sevilla </span>
-            </p>
-            <p class="card-text">Concierto de Eminem en Icónica Sevilla Fest 2022</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 9600,43</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/snoop-doggy.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p>
-              <span>05 sep. 2022</span>
-              <span>· Helsinki</span>
-            </p>
-            <p class="card-text">Concierto Imperdible de Snoop Dogg en Helsinki</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 17200,71</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/snoop-doggy.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p>
-              <span>13 sep. 2022</span>
-              <span>· Oberhausen</span>
-            </p>
-            <p class="card-text">Concierto Imperdible de Snoop Dogg en Oberhausen</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 9260,86</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/malandro.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p>
-              <span>15 oct. 2022</span>
-              <span>· Capital Federal </span>
-            </p>
-            <p class="card-text">Concierto de Mala Junta Malandro</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 1800,43</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/ARG.jpg" alt="">
-          </div>
-        </div>
-      
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/malandro.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p>
-              <span>24 oct. 2022</span>
-              <span>· Capital Federal </span>
-            </p>
-            <p class="card-text">Concierto de Mala Junta Malandro</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 2000,43</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/ARG.jpg" alt="">
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/puma-blue.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p>
-              <span>08 oct. 2022</span>
-              <span>· Houston</span>
-            </p>
-            <p class="card-text">Concierto de Puma Blue + Arlo Parks</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 6480,43</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/UK.jpg" alt="">
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="../images/img-artista-inicio/50-cent.jpg" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <p> 
-              <span>22 oct. 2022</span>
-              <span>· Rotterdam</span>
-            </p>
-            <p class="card-text">Concierto de 50 Cent en la Icónica Rotterdam</p>
-            <a href="#" class="btn btn-primary">Agregar Tickets</a>
-          </div>
-          <span class="price-event">$ 10526,84</span>
-          <div class="pais-artist">
-            <img src="../images/bandera-pais-artista/EEUU.jpg" alt="">
-          </div>
-        </div>
-      </div>
   </div>
-</div>
 </section>
+ <div class="modal-content " id="cont-modal-eventos">
+ </div>
+
 <footer>
   <div class="cont-footer">
       <div class="box-footer1">
@@ -291,7 +120,9 @@
   </div>
 </footer>
 
-   
+
+<script src="../js/stockEntradas.js"></script> 
+<script src="../js/conciertos.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" ></script>
