@@ -138,15 +138,36 @@ border: white 2px dashed;
     padding-bottom: 40px;
 }
 
-.cont-filtros .row .selector-musica{
-    margin-bottom: 10px;
+.cont-filtros .row .allFiltrosCont{
+    margin-bottom: 25px;
   
 }
+.cont-buttons .allFiltrosCont .button-value{
+    margin: 2px;
+    border-radius: 35px;
+    padding: 15px;
+
+    border: 2px solid black;
+    font-family: 'Poppins';
+    font-weight: 800;
+    color: black;
+    transition: all 0.9s;
+    text-shadow: 2px 2px 12px black;
+    cursor: pointer;
+
+}
+
+.cont-buttons .allFiltrosCont .button-value-Pais{
+    @extend .button-value;
+}
+
+
 .cont-eventos{
     box-shadow: 2px 2px 10px black;
     background-color: white;
     padding: 20px;
     border-radius: 40px;
+    
 }
 
 .cont-eventos .title-events{
@@ -326,6 +347,20 @@ padding-top: 20px;
     height: 100%;
 }
 
+.card-item{
+    width: auto;
+    height: auto;
+}
+
+.hide{
+    display: none;
+}
+
+.active{
+    background-color: $color1;
+    color: white;
+  
+}
 
 @media (max-width:1024px){
     .features-cont{

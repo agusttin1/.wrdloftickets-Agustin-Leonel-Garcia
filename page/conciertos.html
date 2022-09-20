@@ -12,7 +12,7 @@
   </head>
   <body">
     <header>
-      <div class="cont-logo">
+      <div class="cont-logo ">
         <figure>
           <a href="./index.html"><img src="../png/logo/logo.png" alt="" /></a>
         </figure>
@@ -50,7 +50,7 @@
        </div>
        </section>
       
-     <section class="features-cont">
+     <section class="features-cont ">
        <div class="features">
          <img src="../png/features/credit-card.png" alt="" class="featuresImg">
          <span class="feature-title">COMPRA RÁPIDO Y SEGURO</span>
@@ -74,26 +74,32 @@
   <div class="container" id="contenedor-eventos">
       <div class="container cont-filtros" id="entradas">
         <div class="titulo-filtros">
-          <h3>Filtros</h3>
+          <h3>Filtros Por Categoria</h3>
         </div>
-        <div class="row con-selectores">
+        <div class="row cont-buttons">
           <div class="col-sm-1"></div>
-          <div class="col-sm-5 selector-musica" id="selectorMusica">
-            <select name="" id="categoria-musica" class="form-control">
-              <option value="All">Todas las categorias</option>
-              <option value="Trap">Trap</option>
-              <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
-              <option value="Alternativa/Independiente">Alternativa/Independiente</option>
-            </select>
+          <div class="col-sm-10 allFiltrosCont " >
+           <button class="button-value" onclick="filtrosEntradas('All')">All</button>
+           <button class="button-value" onclick="filtrosEntradas('Trap')">Trap</button>
+           <button class="button-value" onclick="filtrosEntradas('Hip-Hop/Rap')">Hip-Hop/Rap</button>
+           <button class="button-value" onclick="filtrosEntradas('Alternativa/Independiente')">Alternativa/Independiente</button>
           </div>
-          <div class="col-sm-5 selector-pais" id="selectorPais">
-            <select name="" id="categoria-pais" class="form-control">
-              <option value="allPais" id="allP">Artistas de todos los paises</option>
-              <option value="ARG" id="allARG">Argentina</option>
-              <option value="EEUU" id=" allEEUU">Estados Unidos</option>
-              <option value="UK" id="AllUK">Inglaterra</option>
-            </select>
+
+          <div class="col-sm-1"></div>
+        </div>
+        <div class="titulo-filtros">
+          <h3>Filtros Por Pais del Artista</h3>
+        </div>
+        <div class="row cont-buttons">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10 allFiltrosCont " >
+           <button class="button-value" onclick="filtrosEntradas('All')">All</button>
+           <button class="button-value" onclick="filtrosEntradas('Ingles')">Ingles</button>
+           <button class="button-value" onclick="filtrosEntradas('Argentino')">Argentino</button>
+           <button class="button-value" onclick="filtrosEntradas('EEUU')">EEUU</button> 
+           
           </div>
+
           <div class="col-sm-1"></div>
         </div>
       </div>
@@ -109,7 +115,7 @@
   
   </div>
 </section>
- <div class="modal-content " id="cont-modal-eventos">
+ <div class="modal-content  " id="cont-modal-eventos">
  </div>
 
 <footer>

@@ -1,6 +1,5 @@
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
               ///////////////////////////////Inyeccion HTML desde js para mostrar las entradas disponibles Y evento en el boton de su card///////////////////////////////
 
 let carrito = []
@@ -12,15 +11,15 @@ function entradasMostrar (){
 
 for (const datosEntrada of allEntradas) {
     let columnsEntradas = document.createElement(`div`)
-    columnsEntradas.id += `entrada-${datosEntrada.id}`
-    columnsEntradas.className = `${datosEntrada.categoria} ${datosEntrada.pais}`
+    columnsEntradas.id += `entrada-${datosEntrada.id}` 
+    columnsEntradas.className= `${datosEntrada.categoria}  hide card-item ${datosEntrada.pais}` 
     columnsEntradas.innerHTML = `
-    <div class="card " style="width: 18rem;">
+    <div class="card"  style="width: 18rem;">
     <img src=${datosEntrada.img} class="card-img-top" alt="...">
     <div class="card-body">
     <p>
         <span>${datosEntrada.fecha}</span>
-        <span>· ${datosEntrada.ciudad}Los Ángeles</span>
+        <span>· ${datosEntrada.ciudad}</span>
     </p>
     <p class="card-text">${datosEntrada.descripEntrada} </p>
     <button id="btn-comprar-${datosEntrada.id}" class="btn btn-primary">Agregar tickets</button>
@@ -33,7 +32,9 @@ for (const datosEntrada of allEntradas) {
 
     callElementEntradas.appendChild(columnsEntradas)
 
-    
+
+
+
     let callBtnCompra = document.getElementById(`btn-comprar-${datosEntrada.id}`)
 
     callBtnCompra.addEventListener(`click`,()=>{
@@ -51,15 +52,51 @@ for (const datosEntrada of allEntradas) {
  
 }
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              ///////////////////////////////Funcion para filtrar las entradas por pais y categoria. Usado con un onclick dentro del html///////////////////////////////
 
+function filtrosEntradas(value){
+    let callButtonsCategoria = document.querySelectorAll(".button-value")
+  
+    callButtonsCategoria.forEach((callButtonsARecorrer)=>{
+        if(value == callButtonsARecorrer.innerText){
+            callButtonsARecorrer.classList.add("active")
+        }else{
+            callButtonsARecorrer.classList.remove("active")
+        }
+    })
+        
+    let elements = document.querySelectorAll(".card-item")
+    elements.forEach((elemento)=>{
+        if(value == "All"){
+            elemento.classList.remove("hide")
+        }else{
+            if(elemento.classList.contains(value)){
+                elemento.classList.remove('hide')
+            }
+            else{
+                elemento.classList.add("hide")
+            }
+        }
+    })
+    }
 
+   
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//funcion anonima para que cargue automaticamente los productos
+window.onload = () =>{
+    filtrosEntradas('All')
+  
+}
 
-              ///////////////////////////////Inyeccion HTML desde js para mostrar las entradas disponibles seleccionadas en el carrito Y evento para hacer funcional el carrito///////////////////////////////
-              
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+              ///////////////////////////////Inyeccion HTML desde js para mostrar las entradas disponibles Y evento en el boton de su card///////////////////////////////
+
 
 
 function carritoFuncional (){
@@ -134,7 +171,6 @@ callCarrito.addEventListener(`click`,()=>{
 })
 
 }
-
 
 function main(){
     entradasMostrar()
