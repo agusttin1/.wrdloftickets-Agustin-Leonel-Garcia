@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Open+Sans:ital@1&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Open+Sans:ital@1&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -101,13 +103,17 @@ header .cont-logo figure img {
   line-height: 3.5rem;
   display: block;
   font-family: "Poppins";
-  font-size: 24px;
   z-index: 1;
   margin: 0 45px;
 }
 
-.home-inicio .home-text h1, .home-inicio-concierto .home-text h1 {
+.home-inicio .home-text .h1-text, .home-inicio-concierto .home-text .h1-text {
+  font-size: 35px;
   color: white;
+}
+
+.home-text .span-text {
+  font-size: 25px;
 }
 
 .home-inicio .home-text span, .home-inicio-concierto .home-text span {
@@ -396,40 +402,95 @@ footer .cont-footer {
   padding: 10px;
 }
 
+.home-inicio .home-text, .home-inicio-concierto .home-text {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.home-inicio .home-text h1, .home-inicio-concierto .home-text h1 {
+  font-size: 25px;
+}
+
+.home-text span {
+  font-size: 18px;
+}
+
+.sobre-nosotros .titulo-nosotros h2 {
+  font-size: 25px;
+}
+
+.sobre-nosotros .text-nosotros p {
+  font-size: 16px;
+}
+
+.sobre-nosotros .lema-cont h4 {
+  font-size: 18px;
+}
+
+.artistas .header-artistas h2 {
+  font-size: 25px;
+}
+
+.artistas .header-artistas span {
+  font-size: 18px;
+}
+
+.testimonios .testimonios-header h2 {
+  font-size: 25px;
+}
+
+.testimonios .testimonios-header span {
+  font-size: 18px;
+}
+
+.custom-loader {
+  width: 45px;
+  height: 50px;
+  --c:linear-gradient(#000f 0 0);
+  background: var(--c) 0% 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  background-size: 9px 100%;
+  background-repeat: no-repeat;
+  animation: b2 1s infinite linear;
+  z-index: 9999999999999;
+  margin-right: 5px;
+}
+
+.custom-loader-caract {
+  background-color: #e9e41d;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  clip-path: circle(150% at 100% 0);
+  transition: clip-path 0.9s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-loader-caract2 {
+  clip-path: circle(0% at 100% 0);
+}
+
+@keyframes b2 {
+  20% {
+    background-size: 9px 60%, 9px 100%, 9px 100%;
+  }
+  40% {
+    background-size: 9px 80%, 9px 60%, 9px 100%;
+  }
+  60% {
+    background-size: 9px 100%, 9px 80%, 9px 60%;
+  }
+  80% {
+    background-size: 9px 100%, 9px 100%, 9px 80%;
+  }
+}
 @media (min-width: 320px) and (max-width: 600px) {
   header .cont-logo figure a img {
     height: 50px;
-  }
-  .home-inicio .home-text, .home-inicio-concierto .home-text {
-    margin: 0;
-    margin-left: 10px;
-  }
-  .home-inicio .home-text h1, .home-inicio-concierto .home-text h1 {
-    font-size: 25px;
-  }
-  .home-text span {
-    font-size: 18px;
-  }
-  .sobre-nosotros .titulo-nosotros h2 {
-    font-size: 25px;
-  }
-  .sobre-nosotros .text-nosotros p {
-    font-size: 16px;
-  }
-  .sobre-nosotros .lema-cont h4 {
-    font-size: 18px;
-  }
-  .artistas .header-artistas h2 {
-    font-size: 25px;
-  }
-  .artistas .header-artistas span {
-    font-size: 18px;
-  }
-  .testimonios .testimonios-header h2 {
-    font-size: 25px;
-  }
-  .testimonios .testimonios-header span {
-    font-size: 18px;
   }
 }
 @media (min-width: 600px) and (max-width: 850px) {
@@ -508,14 +569,18 @@ body {
   position: relative;
 }
 
-header .contAllMenuCarrito .cont-carrito .contador-compra {
-  left: 5px;
-  bottom: 0;
-  background-color: #e9e41d;
+header .contAllMenuCarrito .cont-carrito-header .carrito-comprar {
+  color: #e9e41d;
+}
+
+header .contAllMenuCarrito .cont-carrito-header .contador-compra {
+  left: 0px;
+  bottom: -15px;
+  background-color: white;
   font-family: "bungee";
   font-weight: 600;
   color: black;
-  border: white 2px dashed;
+  border: black 2px dashed;
   border-radius: 50px;
   padding: 2px;
   padding-left: 5px;
@@ -724,61 +789,58 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   height: 100%;
 }
 
-.modal-content {
+.modal-contenedor {
   position: fixed;
-  width: 50%;
-  max-height: 84vh;
+  width: 45%;
   right: 0;
-  max-height: auto;
   background-color: white;
-  overflow: scroll;
+  height: 84vh;
   z-index: 9999;
   top: 130px;
-  scrollbar-color: none;
   color: black;
-  transform: translateX(0);
-  transition: all 250ms ease-in-out;
+  display: flex;
   box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   -webkit-box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
+  overflow: scroll;
 }
 
-.esconder-cont {
+.modal-contenedor::-webkit-scrollbar {
   display: none;
 }
 
-.modal-content::-webkit-scrollbar {
-  display: none;
+.modal-contenedor .modal-title {
+  background-color: #e9e41d;
+  padding: 15px;
 }
 
-.modal-content .cont-header-modal {
-  display: flex;
-  justify-content: space-between;
-  background: #e9e41d;
+.modal-title h3 {
   font-family: "Poppins";
-  font-weight: 700;
-  color: black;
-  padding: 5px;
+  font-weight: 800;
+  text-align: center;
 }
 
-.cont-header-modal .title-modal {
-  margin-left: 5px;
-}
-
-.cont-header-modal .title-modal::before {
+.modal-title h3::before {
   content: "/";
   font-size: small;
-  color: black;
-  font-weight: 800;
   margin-right: 5px;
 }
 
-.cont-header-modal .boton-salir-modal {
-  font-size: 25px;
-  border-radius: 20px;
-  padding: 5px;
-  transition: all 0.6s;
-  cursor: pointer;
+.modal-title #carrito-cerrar {
+  border: none;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 50px;
+  right: 0;
+  right: 10px;
+  position: absolute;
+  top: 10px;
+  background: none;
+}
+
+.modal-title #carrito-cerrar:hover {
+  background-color: white;
 }
 
 .boton-salir-modal:hover {
@@ -786,7 +848,11 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   color: #e9e41d;
 }
 
-.modal-content .body-modal {
+.modal-title #carrito-contenedor {
+  background-color: white;
+}
+
+.entradas-in-carrito {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -794,19 +860,39 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   width: 100%;
   border-bottom: 4px dashed #e9e41d;
   padding-bottom: 10px;
-  overflow: hidden;
   padding-top: 20px;
   position: relative;
+  border-left: 10px solid #f7f7b6;
+  border-radius: 12px 0 12px 12px;
 }
 
-.body-modal .cont-img {
+.entradas-in-carrito .body-info-modal {
+  font-size: 15px;
+  font-family: "Poppins";
+}
+
+.entradas-in-carrito .price-event-modal {
+  font-family: "Poppins";
+}
+
+.entradas-in-carrito:hover {
+  border-left: 10px solid #e9e41d;
+}
+
+.entradas-in-carrito .cont-img {
   height: 100px;
   width: 100px;
   border-radius: 20%;
   overflow: hidden;
 }
 
-.body-modal .btn-eliminar-entrada {
+.entradas-in-carrito .cont-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.entradas-in-carrito .btn-eliminar-entrada {
   position: absolute;
   top: 0;
   right: 0;
@@ -822,33 +908,7 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   font-family: "Poppins";
 }
 
-.modal-content .footer-modal {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
-}
-
-.modal-content .footer-modal .cont-total-modal {
-  border-left: 4px dashed #e9e41d;
-  border-bottom: 4px dashed #e9e41d;
-  border-right: 4px dashed #e9e41d;
-  border-top: none;
-  margin-top: 0;
-  padding: 10px;
-  font-family: "Poppins";
-  font-size: 18px;
-}
-
-.modal-content .footer-modal .cont-botones-modal {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.cont-botones-modal .btn {
+.modal-contenedor .btn {
   color: black;
   background-color: #e9e41d;
   font-family: "Poppins";
@@ -857,10 +917,19 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   box-shadow: 2px 2px 4px white;
 }
 
-.cont-img img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.modal-contenedor .footerModal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.modal-contenedor .footerModal .cont-producto-precio {
+  border: 4px dashed #e9e41d;
+  margin-top: 0;
+  padding: 10px;
+  font-family: "Poppins";
+  font-size: 18px;
 }
 
 .card-item {
@@ -872,14 +941,17 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   display: none;
 }
 
+.nohide {
+  display: block;
+}
+
 .active {
   background-color: #e9e41d;
   color: white;
 }
 
-#btn-pagar-modal a {
-  color: black;
-  text-decoration: none;
+.d-block {
+  display: block;
 }
 
 @media (max-width: 1024px) {
@@ -889,6 +961,151 @@ header .contAllMenuCarrito .cont-carrito .contador-compra {
   .features-cont .features {
     margin-top: 40px;
   }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.body-finalizar-compra {
+  background: url(../images/img-banner-inicio/banner-inicio.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.main-compra {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-compra .paymentCont {
+  padding: 20px;
+}
+
+.paymentCont .cont-payment {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 740px;
+  margin: auto;
+  padding: 40px 50px;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  font-family: "Poppins";
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50px;
+}
+
+.cont-payment .titleFormPay {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.cont-payment label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cont-payment .payInputCont {
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  border-bottom: 2px solid #e9e41d;
+}
+
+.cont-payment .payInputCont::placeholder {
+  color: #a3a3a3;
+  font-weight: 400;
+}
+
+.cont-payment .card-icon {
+  display: flex;
+  margin-right: 10px;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.cont-card-img .sm {
+  width: 30%;
+}
+
+.cont-payment .CheckOutPay {
+  height: 40px;
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  background-color: #e9e41d;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: 800;
+}
+
+.cont-section {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-after-compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 800px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 26px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 50px;
+  font-family: "Bungee";
+  top: 200px;
+  position: absolute;
+}
+
+.section-after-compra .icono {
+  font-size: 90px;
+  color: green;
+  overflow: hidden;
+}
+
+.section-after-compra .after-btn-compra {
+  height: 40px;
+  width: 50%;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  background-color: #e9e41d;
+  color: black;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-weight: 800;
+}
+
+.section-after-compra .after-btn-compra a {
+  text-decoration: none;
+  color: black;
+}
+
+.hidepay {
+  display: none;
+}
+
+.removehide {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

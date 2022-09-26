@@ -11,14 +11,17 @@ body{
     position: relative;
   
 }
-header .contAllMenuCarrito .cont-carrito .contador-compra{
-    left:5px;
-    bottom:0 ;
-    background-color: $color1 ; 
+header .contAllMenuCarrito .cont-carrito-header .carrito-comprar{
+    color: $color1;
+}
+header .contAllMenuCarrito .cont-carrito-header .contador-compra{
+    left:0px;
+    bottom:-15px ;
+    background-color: white ; 
     font-family: 'bungee';
     font-weight: 600;
 color: black;
-border: white 2px dashed;
+border: black 2px dashed;
     border-radius:50px; 
     padding:2px;
     padding-left: 5px;
@@ -32,6 +35,7 @@ border: white 2px dashed;
 .home-inicio-concierto{
     @extend .home-inicio;
     background-image: url(../images/img-banner-inicio/banner-concierto.jpg);
+   
 }
 
 
@@ -243,68 +247,81 @@ border: white 2px dashed;
 }
 
 
-.modal-content{
+.modal-contenedor{
 position: fixed;
-width: 50%;
-max-height: 84vh ;
+width: 45%;
 right: 0;
-max-height:auto;
 background-color: white;
-overflow: scroll;
+height: 84vh;
 z-index: 9999;
 top: 130px;
-scrollbar-color: none;
 color: black;
-transform: translateX(0);
-transition: all 250ms ease-in-out;
+display: flex;
 box-shadow: -12px 8px 30px 3px rgba(0,0,0,0.52);
 -webkit-box-shadow: -12px 8px 30px 3px rgba(0,0,0,0.52);
 -moz-box-shadow: -12px 8px 30px 3px rgba(0,0,0,0.52);
-
+overflow: scroll;
 
 }
 
-.esconder-cont{
+
+.modal-contenedor::-webkit-scrollbar{
     display: none;
 }
 
-.modal-content::-webkit-scrollbar{
-    display: none;
+
+
+.modal-contenedor  .modal-title{
+    background-color: $color1;
+    padding: 15px;
 }
 
-.modal-content .cont-header-modal{
-    display: flex;
-    justify-content: space-between;
-    background: $color1;
+
+
+
+.modal-title h3{
     font-family: 'Poppins';
-    font-weight: 700;
-    color: black;
-    padding: 5px;
-}
-.cont-header-modal .title-modal{
-    margin-left: 5px;
-}
-.cont-header-modal .title-modal::before{
-    content: "/";
-   font-size: small;
-    color:black;
     font-weight: 800;
+    text-align: center;
+  
+}
+
+.modal-title h3::before{
+    content: "/";
+    font-size: small;
     margin-right: 5px;
 }
-.cont-header-modal .boton-salir-modal{
-    font-size: 25px;
-    border-radius: 20px;
-    padding: 5px;
-    transition: all 0.6s;
-    cursor: pointer;
- 
+
+.modal-title #carrito-cerrar{
+    border: none;
+    font-size: 30px;
+   padding-left: 10px;
+   padding-right: 10px;
+  
+    border-radius: 50px;
+    right: 0;
+right: 10px;
+    position: absolute;
+    top: 10px;
+    background:none;
 }
+
+.modal-title #carrito-cerrar:hover{
+    background-color: white;
+
+}
+
 .boton-salir-modal:hover{
     background-color: white;
     color: $color1;
 }
 
-.modal-content .body-modal{
+.modal-title #carrito-contenedor{
+    background-color: white;
+}
+
+
+ .entradas-in-carrito{
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -312,20 +329,40 @@ align-items: center;
 width: 100%;
 border-bottom: 4px dashed $color1;
 padding-bottom: 10px;
-overflow: hidden;
 padding-top: 20px;
 position: relative;
+border-left: 10px solid #f7f7b6;
+border-radius: 12px 0 12px 12px;
+
+
 }
 
-.body-modal .cont-img{
+.entradas-in-carrito .body-info-modal{
+    font-size: 15px;
+    font-family: 'Poppins';
+}
+.entradas-in-carrito .price-event-modal{
+    font-family: 'Poppins';
+}
+.entradas-in-carrito:hover{
+    border-left: 10px solid $color1 ;
+}
+
+.entradas-in-carrito .cont-img{
     height: 100px;
-  width: 100px;
-  border-radius: 20%;
-  overflow: hidden;
+width: 100px;
+border-radius: 20%;
+overflow: hidden;
 
 }
+.entradas-in-carrito .cont-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 
-.body-modal .btn-eliminar-entrada{
+
+.entradas-in-carrito .btn-eliminar-entrada{
     position: absolute;
     top: 0;
     right: 0;
@@ -342,33 +379,9 @@ position: relative;
     
 }
 
-.modal-content .footer-modal{
-    display: flex;
- flex-direction: column;
- align-items:flex-end;
-    width: 100%;
-}
 
-.modal-content .footer-modal .cont-total-modal{
-   border-left: 4px dashed $color1;
-   border-bottom: 4px dashed $color1;
-   border-right: 4px dashed $color1;
-   border-top: none;
-    margin-top: 0;
-    padding: 10px;
-    font-family: 'Poppins';
-    font-size: 18px;
-}
 
-.modal-content .footer-modal .cont-botones-modal{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.cont-botones-modal .btn{
+.modal-contenedor .btn{
     color: black;
     background-color: $color1;
     font-family: 'Poppins';
@@ -376,10 +389,20 @@ position: relative;
     border: 2px solid white;
     box-shadow: 2px 2px 4px white;
 }
-.cont-img img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+
+.modal-contenedor .footerModal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.modal-contenedor .footerModal .cont-producto-precio{
+    border: 4px dashed $color1;
+    margin-top: 0;
+    padding: 10px;
+    font-family: 'Poppins';
+    font-size: 18px;
 }
 
 .card-item{
@@ -390,17 +413,21 @@ position: relative;
 .hide{
     display: none;
 }
+.nohide{
+    display: block;
+}
 
 .active{
     background-color: $color1;
     color: white;
-  
+
 }
 
-#btn-pagar-modal a{
-    color: black;
-    text-decoration: none;
+.d-block{
+    display:block;
 }
+
+
 
 @media (max-width:1024px){
     .features-cont{

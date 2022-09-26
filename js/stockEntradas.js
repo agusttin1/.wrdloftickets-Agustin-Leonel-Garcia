@@ -31,5 +31,5 @@
                     
                     const allEntradas = [entradaUno,entradaDos,entradaTres,entradaCuatro,entradaCinco,entradaSeis,entradaSiete,entradaOcho,entradaNueve,entradaDiez ,entradaOnce,entradaDoce]
                     
-
+                    let carrito = [];
     

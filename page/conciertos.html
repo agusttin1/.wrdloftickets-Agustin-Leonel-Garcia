@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <title>.Wrld of ticket's | Conciertos</title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <div class="cont-logo ">
         <figure>
-          <a href="./index.html"><img src="../png/logo/logo.png" alt="" /></a>
+          <a href="../index.html"><img src="../png/logo/logo.png" alt="" /></a>
         </figure>
       </div>
-
       <div class="contAllMenuCarrito d-flex align-items-center mr-5 ">
         <nav class="menu mt-4">
           <label for="menu-btn-check" id="menu-btn"><i class="fa-solid fa-bars btn-menu"></i></label>
@@ -32,8 +31,8 @@
             </li>
           </ul>
         </nav>
-        <div class="cont-carrito position-relative " >
-          <span class="carrito-compra" id="carrito" onclick="carritoFuncional()"style="font-size:50px ; ">🛒</span>
+        <div class="cont-carrito-header position-relative " >
+          <span class="carrito-comprar fa-solid fa-ticket" id="carrito"  style="font-size:50px ; "></span>
           <span class="contador-compra position-absolute" id="contador-carrito">0</span>
         </div>
       </div>
@@ -42,8 +41,8 @@
 
     <section class="home-inicio-concierto">
       <div class="home-text">
-          <h1>Aca encontraras las entradas</h1>
-          <span>Compra de una forma sencilla, segura y a distancia.</span>
+          <h1 class="h1-text">Aca encontraras las entradas</h1>
+          <span class="span-text">Compra de una forma sencilla, segura y a distancia.</span>
           <div class="cont-btn">
     <a href="#entradas" class="btn">Comprar <i class="fa-solid fa-arrow-alt-circle-right flecha-btn"></i></a>
   </div>
@@ -66,62 +65,47 @@
         <span class="feature-title">CONTACTANOS A NUESTRO EMAIL</span>
         <span class="feature-descrip">Si querés dar alguna opinión sobre nuestro sitio o algún reclamo, contactanos a través de nuestro correo.</span>
       </div>
-      
-      
     </section>
   
     <section class="all-cont-event">
   <div class="container" id="contenedor-eventos">
-      <div class="container cont-filtros" id="entradas">
-        <div class="titulo-filtros">
-          <h3>Filtros Por Categoria</h3>
-        </div>
-        <div class="row cont-buttons">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-10 allFiltrosCont " >
-          <button class="button-value" onclick="filtrosEntradas('All')">All</button>
-          <button class="button-value" onclick="filtrosEntradas('Trap')">Trap</button>
-          <button class="button-value" onclick="filtrosEntradas('Hip-Hop/Rap')">Hip-Hop/Rap</button>
-          <button class="button-value" onclick="filtrosEntradas('Alternativa/Independiente')">Alternativa/Independiente</button>
-        <button class="button-value" onclick="filtrosEntradas('Rock')">Rock</button>
-          </div>
+    <div class="container cont-filtros" id="entradas">
+  </div>
 
-          <div class="col-sm-1"></div>
-        </div>
-        <div class="titulo-filtros">
-          <h3>Filtros Por Pais del Artista</h3>
-        </div>
-        <div class="row cont-buttons">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-10 allFiltrosCont " >
-          <button class="button-value" onclick="filtrosEntradas('All')">All</button>
-          <button class="button-value" onclick="filtrosEntradas('Ingles')">Ingles</button>
-          <button class="button-value" onclick="filtrosEntradas('Argentino')">Argentino</button>
-          <button class="button-value" onclick="filtrosEntradas('EEUU')">EEUU</button> 
-          
-          </div>
-
-          <div class="col-sm-1"></div>
-        </div>
-      </div>
-    
     <div class="cont-eventos d-flex flex-column justify-content-center container " >
       <div class="title-events  justify-content-center">
         <h3>Nuestros conciertos</h3>
       </div>
-  
   <div class="d-flex flex-row flex-wrap justify-content-center" id="contenedor-productos" >
       </div> 
   </div>
-  
   </div>
 </section>
   
-
-  <div class="modal-content " id="cont-modal-eventos">
+<div class="modal-contenedor hide">
+  <div class="modal-carrito ">
+   <div class="modal-title">
+    <h3>Bienvendio al carrito</h3>
+    <button id="carrito-cerrar">&times;</button>
   </div>
+    <div id="carrito-contenedor">
+    </div>
+  </div>
+  <div class="footerModal">
+    <div class="contBotones">
+    <button id="vaciar-carrito" class="btn">vaciar carrito</button>
+  <button id="compra-carrito" class="btn"><a href="../page/finalizarCompra.html">Finalizar Compra</a></button>
+  <button id="volver-carrito" class="btn">volver</button>
+</div>
+  <p class="cont-producto-precio">Precio Total: $<span id="precioTotalEntradas">0</span></p>
+</div>
+</div>
 
-  
+<div class="custom-loader-caract d-flex justify-content-center align-items-center" id="loader-cont">
+<div class="custom-loader mr-2"></div>
+<div class="custom-loader "></div>
+</div>
+
 <footer>
   <div class="cont-footer">
       <div class="box-footer1">
@@ -130,9 +114,9 @@
   </div>
 </footer>
 
-
 <script src="../js/stockEntradas.js"></script> 
 <script src="../js/conciertos.js"></script>
+<script src="../js/finalizarCompra.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" ></script>

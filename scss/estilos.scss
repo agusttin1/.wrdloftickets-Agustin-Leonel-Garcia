@@ -101,14 +101,19 @@ header .cont-logo figure img {
   line-height: 3.5rem;
   display: block;
   font-family: "Poppins";
-  font-size: 24px;
+  
 
   z-index: 1;
   margin: 0 45px;
 }
 
-.home-inicio .home-text h1 {
+.home-inicio .home-text .h1-text {
+  font-size: 35px;
   color: white;
+
+}
+.home-text .span-text{
+  font-size: 25px;
 }
 
 .home-inicio .home-text span {
@@ -385,6 +390,7 @@ footer {
   color: #e9e41d;
   border-top: 4px solid #e9e41d;
   font-family: "bungee";
+
 }
 
 footer .cont-footer {
@@ -395,11 +401,6 @@ footer .cont-footer {
   height: auto;
   font-size: 15px;
   padding: 10px;
-}
-
-@media (min-width: 320px) and (max-width: 600px) {
-header .cont-logo figure a img {
-    height: 50px;
 }
 
 .home-inicio .home-text {
@@ -441,12 +442,62 @@ header .cont-logo figure a img {
   .testimonios .testimonios-header span {
     font-size: 18px;
   }
-}
+
+  .custom-loader{
+    width:45px;
+    height:50px;
+    --c:linear-gradient(#000f 0 0);
+    background: 
+      var(--c) 0%   100%,
+      var(--c) 50%  100%,
+      var(--c) 100% 100%;
+    background-size:9px 100%;
+    background-repeat: no-repeat;
+    animation:b2 1s infinite linear;
+    z-index: 9999999999999;
+    margin-right: 5px;
+  }
+  
+  .custom-loader-caract{
+    background-color: $color1;
+    width: 100%;
+    height: 100vh;
+    z-index:999999999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 0.9s ease-in-out ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  
+  .custom-loader-caract2{
+    clip-path: circle(0% at 100% 0);
+  
+  }
+  
+  @keyframes b2 {
+      20% {background-size:9px 60% ,9px 100%,9px 100%}
+      40% {background-size:9px 80% ,9px 60% ,9px 100%}
+      60% {background-size:9px 100%,9px 80% ,9px 60% }
+      80% {background-size:9px 100%,9px 100%,9px 80% }
+  }
+
+  @media (min-width: 320px) and (max-width: 600px) {
+  header .cont-logo figure a img {
+      height: 50px;
+  }
+  }  
 
 @media (min-width: 600px) and (max-width: 850px) {
   .sobre-nosotros .titulo-nosotros h2 {
     font-size: 30px;
   }
+
 
   .sobre-nosotros .text-nosotros p {
     font-size: 18px;
@@ -525,4 +576,4 @@ header .cont-logo figure a img {
 
 
 @import "_conciertos.scss";
-
+@import "_finalizarCompra.scss"
