@@ -390,6 +390,11 @@ overflow: hidden;
     box-shadow: 2px 2px 4px white;
 }
 
+ .btn #compra-carrito a{
+    text-decoration: none;
+    color: black;
+}
+
 .modal-contenedor .footerModal{
     display: flex;
     justify-content: space-between;

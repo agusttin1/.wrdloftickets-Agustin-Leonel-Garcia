@@ -3,9 +3,10 @@
 
 const callContPayment = document.getElementById(`allContPayment`)
 function inyeccionContPayment(){
+  
     const formPayment = document.createElement(`form`)
     formPayment.className="cont-payment"
-    formPayment.id="form"
+    formPayment.id="formm"
     formPayment.innerHTML=`
     <h1 class="titleFormPay">Informacion Personal</h1>
     <label>Nombre Y Apellido</label>
