@@ -3,3 +3,5 @@
 window.addEventListener(`load`, ()=>{
     document.getElementById(`loader-cont`).classList.toggle(`custom-loader-caract2`)
 })
+
+

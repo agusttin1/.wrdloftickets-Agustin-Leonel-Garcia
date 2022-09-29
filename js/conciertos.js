@@ -49,24 +49,16 @@ function filtrosEntradas(value) {
 let callButtonsCategoria = document.querySelectorAll(".button-value");
 
 callButtonsCategoria.forEach((callButtonsARecorrer) => {
-    if (value == callButtonsARecorrer.innerText) {
-    callButtonsARecorrer.classList.add("active");
-    } else {
-    callButtonsARecorrer.classList.remove("active");
-    }
+    
+(value == callButtonsARecorrer.innerText) ? callButtonsARecorrer.classList.add(`active`) : callButtonsARecorrer.classList.remove(`active`)
+
 });
 
 let elements = document.querySelectorAll(".card-item");
 elements.forEach((elemento) => {
-    if (value == "All") {
-    elemento.classList.remove("hide");
-    } else {
-    if (elemento.classList.contains(value)) {
-        elemento.classList.remove("hide");
-    } else {
-        elemento.classList.add("hide");
-    }
-    }
+
+(value == `All`) ? elemento.classList.remove(`hide`) : (elemento.classList.contains(value)) ? elemento.classList.remove(`hide`) : elemento.classList.add(`hide`)
+
 });
 }
 
@@ -74,6 +66,7 @@ elements.forEach((elemento) => {
 window.onload = () => {
 filtrosEntradas("All");
 }
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////Inyeccion HTML desde js para mostrar las entradas disponibles Y evento en el boton de su card///////////////////////////////
 
@@ -104,11 +97,10 @@ function entradasMostrar() {
     
         callElementEntradas.appendChild(columnsEntradas);
     
-    
         let callBtnAgregar = document.getElementById(`columna-${datosEntrada.id}`)
     
         callBtnAgregar.addEventListener(`click`,()=>{
-    
+            popUpAbrir(`ticketAgregado`,`Se ha agregado una entrada al carrito`)
             guardarEntradasEnCarrito(datosEntrada.id)
             actualizarEntradaStorage()
         })
@@ -131,14 +123,11 @@ function guardarEntradasEnCarrito(entradaId){
     }else{
         const itemEntrada = allEntradas.find((entrada)=> entrada.id === entradaId)
         carrito.push(itemEntrada)
-    }
+    } 
+
+
 carritoFuncional()
 } 
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -150,6 +139,8 @@ const callBtnAbrirModal = document.getElementById(`carrito`)
 const callModalCarrito = document.getElementsByClassName(`modal-carrito`)[0]
 const callBtnVaciarCarrito = document.getElementById(`vaciar-carrito`)
 
+const callBtnComprar = document.getElementById(`compra-carrito`)
+
 callBtnAbrirModal.addEventListener(`click`, ()=>{
     callContAllModal.classList.toggle(`nohide`)
 })
@@ -158,19 +149,23 @@ callBtnCerrarModal.addEventListener(`click`, ()=>{
 })
 callContAllModal.addEventListener(`click`, ()=>{
     callContAllModal.classList.toggle(`nohide`)
+
 })
 callBtnVaciarCarrito.addEventListener(`click`,(e)=>{
+
 if(carrito.length){
     carrito.length=0
+    popUpAbrir(`ticketEliminado`,`Se ha vaciado completamente el carrito`)
     carritoFuncional()
     actualizarEntradaStorage()
+
 }else{
     alert(`El carrito esta vacio. Agregue al menos una entrada para vaciarlo`)
-}
-    e.stopPropagation() 
+}  
+
+e.stopPropagation() 
 
 })
-
 
 /* EVENTO PARA EVITAR QUE AL HACER CLICK DENTRO DEL MODAL, DESAPAREZCA */
 callModalCarrito.addEventListener(`click`, (e)=>{
@@ -185,7 +180,9 @@ const callContadorCarrito = document.getElementById(`contador-carrito`)
 const callPrecioTotal = document.getElementById(`precioTotalEntradas`)
 
 const carritoFuncional = () =>{
+
 callContInModalCarrito.innerHTML=``
+
     carrito.forEach((dataOfCarrito)=>{
         let contInCarrito = document.createElement(`div`);
         contInCarrito.className=(`entradas-in-carrito`)
@@ -200,7 +197,6 @@ callContInModalCarrito.innerHTML=``
                             </div>
                             <span class="price-event-modal">$ ${dataOfCarrito.precio}</span>
                             <button class="btn-eliminar-entrada" onclick="eliminarItem(${dataOfCarrito.id})"><i class="fas fa-trash-alt"></i></button>
-                    
                             `;
 
                             callContInModalCarrito.appendChild(contInCarrito)
@@ -213,28 +209,54 @@ callPrecioTotal.innerText = carrito.reduce((acc,el)=> acc + el.cantidad * el.pre
 
 }
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////POP UP PARA MOSTRAR CUANDO SE AGREGA UNA ENTRADA AL CARRITO , CUANDO SE ELIMINA Y CUANDO SE VACIA EL CARRITO ///////////////////////////////
+
+let callPopUp = document.getElementById(`popUp-noti`)
+let callText = document.getElementById(`popUpText`)
+
+function popUpAbrir(typeMsj,mensajeAMostrar){
+    callPopUp.classList.remove(`hide`)
+callText.innerHTML = mensajeAMostrar
+    callPopUp.classList.add(typeMsj)
+popUpCerrar(typeMsj)
+
+}
+function popUpCerrar(typeMsj){
+    setTimeout(()=>{
+        callPopUp.classList.add(`hide`)
+        callPopUp.classList.remove(typeMsj)
+    }, 1000)
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////FUNCION PARA PODER ELIMINAR ENTRADAS DENTRO DEL CARRITO + LOCALSTORAGE DE LAS ENTRADAS ///////////////////////////////
+
 const eliminarItem = (id)=>{
     let borrarEntrada = carrito.find((entrada) => entrada.id ===id)
     let indiceABorrar = carrito.indexOf(borrarEntrada)
     carrito.splice(indiceABorrar,1)
+
+    popUpAbrir(`ticketEliminado`,`Se ha eliminado una entrada`)
 carritoFuncional()
 actualizarEntradaStorage() 
+
 }
 
- function actualizarEntradaStorage() {
+function actualizarEntradaStorage() {
     let entradasJSON = JSON.stringify(carrito);
     localStorage.setItem("key-entrada", entradasJSON);
 }
 
 function obtenerEntradaStorage() {
     let entradasJSON = localStorage.getItem("key-entrada");
-    if (entradasJSON) {
+      if (entradasJSON) {
     carrito = JSON.parse(entradasJSON);
 carritoFuncional()
-    }
+    }  
+
 }  
 
 function main() {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
     <link rel="stylesheet" href="../css/styles.css">
     <title>.Wrld Of Tickets | Finalizar Compra</title>
 </head>
@@ -18,28 +19,47 @@
     </div>
     </header>
 
-<main class="main-compra container-fluid">
+<main style="height: 100vh;">
+
   <div class="paymentCont" id="allContPayment">
+    <div class="cont-form" id="contenedor-form">
+      <form class="cont-payment" id="form-payment">
+        <h1 class="titleFormPay">Informacion Personal</h1>
+      <label>Nombre Y Apellido</label>
+      <input type="text" id="name" class="payInputCont" placeholder="ej. Juan Pablo" required >
+      <label>Numero de telefono</label>
+      <input type="text" class="payInputCont" id="numero" placeholder="ej. (num de Area segun tu pais) 1234 5678" required >
+      <label>Email</label>
+      <input type="email"  class="payInputCont" id="email" placeholder="ej. pabloj@gmail.com" required>
+      <h1 class="titleFormPay">Informacion de tarjeta</h1>
+      <div class="cont-card-img">
+      <img src="../png/features/visa.png" alt="VisaCard" width 40="" class="card-icon"  required>
+      <img src="../png/features/master.png" alt="masterCard" width 40="" class="card-icon"  required>
+      </div>
+      <input type="text" class="payInputCont"  id="numberCard" placeholder="1234-2222-4444-5555" required>
+      <div class="card-info">
+      <input type="text" class="payInputCont sm" placeholder="MM" id="mm" required>
+      <input type="text" class="payInputCont sm" placeholder="YY" id="yyy" required>
+      <input type="text" class="payInputCont sm" placeholder="ej. 123" id="cvv" required>
+      </div>
+      <button class="CheckOutPay" type="sumbit" id="payChek">CheckOut</button>
+      </form>
+    </div>
+
+    <div class="cont-section hide " id="cont-section">
+
+    </div>
   </div>
+
+  
  
-<div class="cont-section hidepay" id="cont-section">
- <div class="section-after-compra  mt-auto" id="contAfterBuy">
-    <i class="fa-solid fa-circle-check icono"></i>
-    <h1 class="after-compra-title">Muchas Gracias!</h1>
-    <p class="after-compra-text">Tus datos fueron verificados correctamente.Pronto le llegara un comprobante de su compra a su correo correspondiente</p>
-    <button class="after-btn-compra"><a href="../index.html">Continuar</a></button>
-  </div>  
-</div>
 
 
-
-
- 
   </main>
-  <div class="custom-loader-caract d-flex justify-content-center align-items-center" id="loader-cont">
+   <div class="custom-loader-caract d-flex justify-content-center align-items-center" id="loader-cont">
     <div class="custom-loader mr-2"></div>
     <div class="custom-loader "></div>
-    </div>
+    </div> 
     <footer>
       <div class="cont-footer">
           <div class="box-footer1">
@@ -48,7 +68,9 @@
       </div>
     </footer>
   <script src="../js/finalizarCompra.js"></script>
+  <script src="../js/stockEntradas.js"></script>
   <script src="../js/loaders.js"></script>
+
 
 </body>
 </html>

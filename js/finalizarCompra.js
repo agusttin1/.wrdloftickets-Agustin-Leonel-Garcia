@@ -1,54 +1,54 @@
 //////////////////////////////contenido a agregar/////////////////////////////////
 
 
-const callContPayment = document.getElementById(`allContPayment`)
-function inyeccionContPayment(){
-  
-    const formPayment = document.createElement(`form`)
-    formPayment.className="cont-payment"
-    formPayment.id="formm"
-    formPayment.innerHTML=`
-    <h1 class="titleFormPay">Informacion Personal</h1>
-    <label>Nombre Y Apellido</label>
-    <input type="text" id="name" value="Juan Dominguez" class="payInputCont" >
-    <label>Numero de telefono</label>
-    <input type="text" value="+54 11 4566 0875" class="payInputCont" id="numero" >
-    <label>Email</label>
-    <input type="email" value="jDOM@gmail.com" class="payInputCont" id="email">
-    <h1 class="titleFormPay">Informacion de tarjeta</h1>
-    <div class="cont-card-img">
-    <img src="../png/features/visa.png" alt="VisaCard" width 40="" class="card-icon">
-    <img src="../png/features/master.png" alt="masterCard" width 40="" class="card-icon">
-    </div>
-    <input type="text" class="payInputCont" value="123-123-124-124-456" id="numberCard">
-    <div class="card-info">
-    <input type="text" class="payInputCont sm" value="12/22" id="mm">
-    <input type="text" class="payInputCont sm" value="12/26" id="yyy">
-    <input type="text" class="payInputCont sm" value="444" id="cvv">
-    </div>
-    <button class="CheckOutPay" id="payChek">CheckOut</button>
-    </form>
-    
-    `
-callContPayment.appendChild(formPayment)
+
+let callNameValue = document.getElementById(`name`)
+let callTelefono = document.getElementById(`numero`)
+let callEmail = document.getElementById(`email`)
+const callSectionAfterCompra = document.getElementById(`cont-section`)
+const callForm = document.getElementById(`form-payment`)
+const callContForm = document.getElementById(`contenedor-form`)
 
 
+
+
+function iniciarEventos(){
+    callForm.onsubmit = (e) => formPay(e)
 }
 
+function formPay(e){
+   e.preventDefault()
+callContForm.classList.add(`hide`)
+
+callSectionAfterCompra.classList.remove(`hide`)
+
+let callDivsAfterCompra = document.createElement(`div`)
+callDivsAfterCompra.className = "section-after-compra mt-auto "
+callDivsAfterCompra.id="contAfterBuy"
+callDivsAfterCompra.innerHTML=`
+<i class="fa-solid fa-circle-check icono"></i>
+    <h1 class="after-compra-title">Muchas Gracias,Por su compra! <span class="dataAResaltar">${callNameValue.value}</span></h1>
+    <p class="after-compra-text">Tus datos fueron verificados correctamente.Pronto le llegara un comprobante de su compra al corre de  <span class="dataAResaltar">${callEmail.value}.</span> </p>
+    <p class="after-compra-text">Si llegase a surgir algun incoveniente lo estaremos contactando por dicho email o por su numero de telefono <span class="dataAResaltar">${callTelefono.value}.</span> </p>
+    <button class="after-btn-compra"><a href="../index.html">Continuar</a></button>
+`
+
+callSectionAfterCompra.appendChild(callDivsAfterCompra)
+}
+
+iniciarEventos()
 
 
 
-inyeccionContPayment()
 
 
 
 
-const callbtnchk=document.getElementById(`payChek`)
-const callSectionAfterCompra = document.getElementById(`cont-section`)
+    
 
 
-callbtnchk.addEventListener(`click`,(e)=>{
-    e.preventDefault()
-    callContPayment.classList.add(`hide`)
-    callSectionAfterCompra.classList.remove(`hidepay`)
-})
+
+
+    
+
+ 
