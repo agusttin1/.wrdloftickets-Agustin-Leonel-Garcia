@@ -100,9 +100,10 @@ function entradasMostrar() {
         let callBtnAgregar = document.getElementById(`columna-${datosEntrada.id}`)
     
         callBtnAgregar.addEventListener(`click`,()=>{
-            popUpAbrir(`ticketAgregado`,`Se ha agregado una entrada al carrito`)
+        
             guardarEntradasEnCarrito(datosEntrada.id)
             actualizarEntradaStorage()
+            mostrarToastConfirmacion(`Se ha agregado una entrada para ver a ${datosEntrada.nombreArtista} al carrito`,`ticketAgregado`)
         })
     
         callContadorCarrito.innerText=carrito.length
@@ -151,19 +152,33 @@ callContAllModal.addEventListener(`click`, ()=>{
     callContAllModal.classList.toggle(`nohide`)
 
 })
-callBtnVaciarCarrito.addEventListener(`click`,(e)=>{
+callBtnVaciarCarrito.addEventListener(`click`,()=>{
 
 if(carrito.length){
+
+Swal.fire({
+icon:'question',
+title: 'Estas seguro que deseas vaciar el carrito?',
+showCancelButton: true,
+confirmButtonText: 'Vaciar Carrito',
+cancelButtonText:'Cancelar'
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+if (result.isConfirmed) {
     carrito.length=0
-    popUpAbrir(`ticketEliminado`,`Se ha vaciado completamente el carrito`)
     carritoFuncional()
     actualizarEntradaStorage()
-
+    mostrarToastConfirmacion(`Se ha vaciado todo el carrito`,`ticketAgregado`)
+} 
+})
 }else{
-    alert(`El carrito esta vacio. Agregue al menos una entrada para vaciarlo`)
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'El carrito esta vacio agregue al menos una entrada, para poder vaciarlo.'
+        
+    })
 }  
-
-e.stopPropagation() 
 
 })
 
@@ -204,7 +219,7 @@ callContInModalCarrito.innerHTML=``
 
     })
 
-    callContadorCarrito.innerText=carrito.length
+callContadorCarrito.innerText=carrito.length
 callPrecioTotal.innerText = carrito.reduce((acc,el)=> acc + el.cantidad * el.precio,0).toFixed(2)
 
 }
@@ -214,21 +229,15 @@ callPrecioTotal.innerText = carrito.reduce((acc,el)=> acc + el.cantidad * el.pre
 
 ///////////////////////////////POP UP PARA MOSTRAR CUANDO SE AGREGA UNA ENTRADA AL CARRITO , CUANDO SE ELIMINA Y CUANDO SE VACIA EL CARRITO ///////////////////////////////
 
-let callPopUp = document.getElementById(`popUp-noti`)
-let callText = document.getElementById(`popUpText`)
-
-function popUpAbrir(typeMsj,mensajeAMostrar){
-    callPopUp.classList.remove(`hide`)
-callText.innerHTML = mensajeAMostrar
-    callPopUp.classList.add(typeMsj)
-popUpCerrar(typeMsj)
-
-}
-function popUpCerrar(typeMsj){
-    setTimeout(()=>{
-        callPopUp.classList.add(`hide`)
-        callPopUp.classList.remove(typeMsj)
-    }, 1000)
+function mostrarToastConfirmacion(msj,classAAgregar){
+    Toastify({
+        text:msj,
+        duration: 3000, 
+        close: true,
+        gravity: "bottom", 
+        position: "right", 
+        className: classAAgregar
+    }).showToast();
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -238,10 +247,9 @@ const eliminarItem = (id)=>{
     let borrarEntrada = carrito.find((entrada) => entrada.id ===id)
     let indiceABorrar = carrito.indexOf(borrarEntrada)
     carrito.splice(indiceABorrar,1)
-
-    popUpAbrir(`ticketEliminado`,`Se ha eliminado una entrada`)
 carritoFuncional()
 actualizarEntradaStorage() 
+mostrarToastConfirmacion(`Se ha eliminado una entrada`,`ticketEliminado`)
 
 }
 
@@ -263,6 +271,7 @@ function main() {
 entradasMostrar()
 contenedorFiltros()
 obtenerEntradaStorage() 
+
 }
 
 main();

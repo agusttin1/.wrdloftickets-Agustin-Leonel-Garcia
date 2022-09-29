@@ -410,35 +410,19 @@ overflow: hidden;
     font-size: 18px;
 }
 
+.ticketAgregado {
+    background: greenyellow;
+    border: black 2px solid;
+    color: black;
+    border-radius: 40px;
 
-
-.popUp{
-right: 0px;
-bottom: 50px;
-z-index: 222222111;
-min-height: 30px;
-width: 450px;
-box-shadow: -12px 8px 30px 3px rgba(0,0,0,0.52);
--webkit-box-shadow: -12px 8px 30px 3px rgba(0,0,0,0.52);
--moz-box-shadow: -12px 8px 30px 3px rgba(0,0,0,0.52);
-padding: 20px 25px;
-border-radius: 10px 0 0 10px;
-display: flex;
-position: fixed;
+    font-weight: 800;
 font-family: 'Poppins';
-font-weight: 800;
-
-
 }
 
-.popUp.ticketAgregado {
-    background-color: greenyellow;
-    border: black 1px solid;
-}
-
-.popUp.ticketEliminado{
-    background-color: red;
-    border: black 1px solid ;
+.ticketEliminado{
+    background: red;
+    @extend .ticketAgregado;
 }
 
 /// clases para usar en js
@@ -467,6 +451,11 @@ font-weight: 800;
 
 .d-block{
     display:block;
+}
+
+
+.toas-close{
+    color: black;
 }
 
 
