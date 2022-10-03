@@ -77,8 +77,43 @@ header .cont-logo figure img {
   display: none;
 }
 
+.navAllCont {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.cont-user .cont-icon-user {
+  background-color: #e9e41d;
+  padding: 10px;
+  border-radius: 20px;
+  color: black;
+  transition: all 0.6s;
+}
+
+.cont-user:hover {
+  transform: translateY(-1px);
+}
+
 #menu-btn-check {
   display: none;
+}
+
+.contUserOptions {
+  background-color: #e9e41d;
+  color: red;
+  position: absolute;
+  bottom: -30px;
+  right: 70px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 15px;
+  font-family: "Poppins";
+  color: black;
+  border: 2px solid white;
+  cursor: pointer;
 }
 
 .home-inicio, .home-inicio-concierto {

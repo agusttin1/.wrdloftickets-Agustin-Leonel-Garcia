@@ -49,17 +49,13 @@ function filtrosEntradas(value) {
 let callButtonsCategoria = document.querySelectorAll(".button-value");
 
 callButtonsCategoria.forEach((callButtonsARecorrer) => {
-    const thisClass = callButtonsARecorrer.classList
-    const thisid = callButtonsARecorrer
-    
-(value === thisid.innerText) ? thisClass.add(`active`) : thisClass.remove(`active`)
+    (value == callButtonsARecorrer.innerText) ? callButtonsARecorrer.classList.add(`active`) : callButtonsARecorrer.classList.remove(`active`)
 
 });
 
 let elements = document.querySelectorAll(".card-item");
 elements.forEach((elemento) => {
-    const el = elemento.classList
-    value === `All` || el.contains(value)? el.remove(`hide`) : el.add(`hide`)
+    (value == `All`) ? elemento.classList.remove(`hide`) : (elemento.classList.contains(value)) ? elemento.classList.remove(`hide`) : elemento.classList.add(`hide`)
 
 /* value == `All`) ? elemento.classList.remove(`hide`) : (elemento.classList.contains(value)) ? elemento.classList.remove(`hide`) : elemento.classList.add(`hide`) */
 

@@ -87,10 +87,12 @@ function login(e){
 
   
   if (checkEmailLog && checkPwdLog){
-   
+
     callMainContForms.classList.add(`hide`)
     callNavCont.classList.remove(`hide`)
     callMainCont.classList.remove(`hide`)
+  
+   
   
   }else{
   errorLog()
@@ -111,7 +113,93 @@ function redirigirRegister(){
   callContFormLogin.classList.add(`hide`)
 }
 
-
+/* functions para lograr msj de error y succes, segun la situacion a la hora del registro y login */
+function succesReg(){
+  const pMsjSuccesReg = document.createElement(`p`)
+  pMsjSuccesReg.className="succes-reg"
+  pMsjSuccesReg.innerHTML=`<i class="fa-solid fa-check i"></i>Su cuenta fue registrada correctamente. Inicie sesion, apretando en el boton de abajo.`
+  callContSuccesMsjReg.appendChild(pMsjSuccesReg)
+  setTimeout(()=>{
+    pMsjSuccesReg.style.display="none"
+  },2000)
+  }
+  
+  
+  function errorReg(){
+    const pMsjErrorReg = document.createElement(`p`)
+    pMsjErrorReg.className="error-reg"
+    pMsjErrorReg.innerHTML=`
+    <i class="fa-solid fa-xmark  i"></i>Error al registrar la cuenta.Email o usuario ya usados, intente con otros datos.`
+  
+    callContErrorMsjReg.appendChild(pMsjErrorReg)
+  
+    setTimeout(()=>{
+        pMsjErrorReg.style.display="none"
+    },2000) 
+    
+  }
+  
+  function errorLog(){
+  
+    const pMsjErrorLog = document.createElement(`p`)
+    pMsjErrorLog.className="error-log"
+    pMsjErrorLog.innerHTML=`<i class="fa-solid fa-xmark  i"></i>Email o usuario incorrectos,intente de nuevo.`
+  callContErrorLog.appendChild(pMsjErrorLog)
+    setTimeout(()=>{
+        pMsjErrorLog.style.display="none"
+    },2000)
+  }
+  
+  function sweetForIntro(){
+    Swal.fire({
+      title: 'Bienvenido/a, a nuestro sitio!',
+      text: 'registrate o inicia sesion, si es que ya tienes una cuenta, para poder acceder a todas nuestras funciones.',
+      imageUrl: './images/img-banner-inicio/sweetAlertImg.jpg',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
+    })
+  }
+  
+  
+  
+  const callContOfUser = document.getElementById(`cont-icon-user`)
+  let callContUserOptions = document.getElementById(`optionsForUser`)
+  let callOptionLogOut = document.getElementById(`loginOut`)
+  
+  function clickInTheIconUser (){
+    callContUserOptions.classList.remove(`hide`)
+   
+  }
+  
+  function clickInTheOptionLogOut (){
+    Swal.fire({
+      title: 'Estas seguro que desea cerrar sesion?',
+      text: "<strong>Perdera</strong> las entradas que selecciono dentro  del carrito!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cerrar Sesion de todas formas!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Sesion Cerrada!',
+          'Redirigiendolo hacia el formulario.',
+          'success',
+          callMainContForms.classList.remove(`hide`),
+        callNavCont.classList.add(`hide`),
+        callMainCont.classList.add(`hide`),
+        localStorage.removeItem(`key-entrada`),
+        carrito=[]
+         
+        )
+        
+      }
+    })
+   
+  
+  }
 
 function actualizarUsuariosStorage(){
  let usersJSON = JSON.stringify(arrCuentas)
@@ -130,54 +218,6 @@ function ObtenerUsuariosStorage(){
 
 
 
-
-/* functions para lograr msj de error y succes, segun la situacion a la hora del registro y login */
-function succesReg(){
-const pMsjSuccesReg = document.createElement(`p`)
-pMsjSuccesReg.className="succes-reg"
-pMsjSuccesReg.innerHTML=`<i class="fa-solid fa-check i"></i>Su cuenta fue registrada correctamente. Inicie sesion, apretando en el boton de abajo.`
-callContSuccesMsjReg.appendChild(pMsjSuccesReg)
-setTimeout(()=>{
-  pMsjSuccesReg.style.display="none"
-},2000)
-}
-
-
-function errorReg(){
-  const pMsjErrorReg = document.createElement(`p`)
-  pMsjErrorReg.className="error-reg"
-  pMsjErrorReg.innerHTML=`
-  <i class="fa-solid fa-xmark  i"></i>Error al registrar la cuenta.Email o usuario ya usados, intente con otros datos.`
-
-  callContErrorMsjReg.appendChild(pMsjErrorReg)
-
-  setTimeout(()=>{
-      pMsjErrorReg.style.display="none"
-  },2000) 
-  
-}
-
-function errorLog(){
-
-  const pMsjErrorLog = document.createElement(`p`)
-  pMsjErrorLog.className="error-log"
-  pMsjErrorLog.innerHTML=`<i class="fa-solid fa-xmark  i"></i>Email o usuario incorrectos,intente de nuevo.`
-callContErrorLog.appendChild(pMsjErrorLog)
-  setTimeout(()=>{
-      pMsjErrorLog.style.display="none"
-  },2000)
-}
-
-function sweetForIntro(){
-  Swal.fire({
-    title: 'Bienvenido/a, a nuestro sitio!',
-    text: 'registrate o inicia sesion, si es que ya tienes una cuenta, para poder acceder a todas nuestras funciones.',
-    imageUrl: './images/img-banner-inicio/sweetAlertImg.jpg',
-    imageWidth: 400,
-    imageHeight: 200,
-    imageAlt: 'Custom image',
-  })
-}
 
 
 

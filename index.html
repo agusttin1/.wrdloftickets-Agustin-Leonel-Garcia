@@ -16,7 +16,7 @@
     <a href="./index.html"><img src="./png/logo/logo.png" alt=""></a></figure>  
     </div>
 
-    <div class="hide"  id="cont-nav">
+    <div class="navAllCont hide"  id="cont-nav">
         <nav class="menu ">
             <label for="menu-btn-check" id="menu-btn"><i class="fa-solid fa-bars btn-menu"></i></label>
                 <input type="checkbox" id="menu-btn-check">
@@ -28,13 +28,25 @@
                     <li class="secciones"><a class="secciones-link" href="./page/conciertos.html">Conciertos</a></li>
                 </ul>
         </nav>
+        <div class="cont-user" id="clickOnUser">
+    <div class="cont-icon-user" onclick="clickInTheIconUser()" >
+            <i class="fa-solid fa-user-minus"></i>
+        </div>
+        
+        </div>
+        <div class="contUserOptions hide" id="optionsForUser">
+            <p class="logOut" id="loginOut" onclick="clickInTheOptionLogOut()" >Cerrar Sesion</p>
+        </div>
     </div>
-
+    
 </header> 
 
 
+
+
+<!-- CONT FORMS REGISTRO Y LOGIN -->
     
-    <section class="main-logReg" id="main-logReg">
+ <section class="main-logReg" id="main-logReg">
         <div class="container-login hide " id="cont-log">
             <div class="forms">
                 <div class="form-login">
@@ -99,10 +111,12 @@
             </div>
         
             
-        </section>
+        </section> 
+        <!-- FIN DEL CONT DE LOS FORMS -->
 
+<!-- SECTION ALL INDEX -->
+   <main class="hide" id="mainContAllIndex">
 
-  <main class="hide" id="mainContAllIndex">
 <section class="home-inicio">
     <div class="home-text">
         <h1 class="h1-text">Encontra las entradas para tu concierto donde sea que estes!</h1>
@@ -304,7 +318,7 @@
             
         </div>
     </section>
-</main>
+</main> 
 
 <div class="custom-loader-caract d-flex justify-content-center align-items-center" id="loader-cont">
     <div class="custom-loader mr-2"></div>
@@ -320,8 +334,8 @@
 </footer>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="./js/index.js"></script>
-<script src="./js/dataBaseUsers.js"></script>
+<script src="./js/regAndLogin.js"></script>
+<script src="./js/conciertos.js"></script>
 <script src="./js/loaders.js"></script>
 </body>
 </html>
