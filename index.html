@@ -16,28 +16,100 @@
     <a href="./index.html"><img src="./png/logo/logo.png" alt=""></a></figure>  
     </div>
 
-    <nav class="menu">
-        <label for="menu-btn-check" id="menu-btn"><i class="fa-solid fa-bars btn-menu"></i></label>
-            <input type="checkbox" id="menu-btn-check">
-    
-            <ul class="cont-secciones" >
-                <li class="secciones"><a class="secciones-link" href="#nosotros">¿Que es .Wrld Of Tickets?</a></li>
-                <li class="secciones"><a class="secciones-link" href="#exp-usuarios">Experiencias de usuarios</a></li>
-                <li class="secciones"><a class="secciones-link" href="#artistas">Artistas</a></li>
-                <li class="secciones"><a class="secciones-link" href="./page/conciertos.html">Conciertos</a></li>
-            </ul>
-    </nav>
+    <div class="hide"  id="cont-nav">
+        <nav class="menu ">
+            <label for="menu-btn-check" id="menu-btn"><i class="fa-solid fa-bars btn-menu"></i></label>
+                <input type="checkbox" id="menu-btn-check">
+        
+                <ul class="cont-secciones " >
+                    <li class="secciones"><a class="secciones-link" href="#nosotros">¿Que es .Wrld Of Tickets?</a></li>
+                    <li class="secciones"><a class="secciones-link" href="#exp-usuarios">Experiencias de usuarios</a></li>
+                    <li class="secciones"><a class="secciones-link" href="#artistas">Artistas</a></li>
+                    <li class="secciones"><a class="secciones-link" href="./page/conciertos.html">Conciertos</a></li>
+                </ul>
+        </nav>
+    </div>
 
 </header> 
 
-<main>
+
+    
+    <section class="main-logReg" id="main-logReg">
+        <div class="container-login hide " id="cont-log">
+            <div class="forms">
+                <div class="form-login">
+                    
+                    <h1 class="title-login">Iniciar Sesion</h1>
+                    <form  id="formLogin">
+                        <div class="input-box">
+                        <input class="inputs" id="emailLog" type="email" placeholder="Ingrese su email..." required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input class="inputs" id="pwdLog" type="password" placeholder="Ingrese su contraseña..." required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+        
+                    <div class="btn-cont">
+                        <button class="btn">Iniciar Sesion Ahora</button>
+                    </div>
+        
+                    </form>
+                    <div class="contErrorMsjLog" id="errorLog"></div>
+                    <div class="pregCuenta">
+                        <p>No tiene una cuenta?<button onclick="redirigirRegister()" id="callRegister">Registrese Ahora.</button></p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div> 
+        
+        
+        <div class="container-register" id="cont-register">
+        
+                <div class="form-register">
+                    <h1 class="title-register">Registrarse</h1>
+                    <form id="formregister" >
+                        <div class="input-box">
+                        <input class="inputs" type="text" id="userReg" placeholder="Ingrese su nombre de usuario..." required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input class="inputs" type="email" id="emailReg" placeholder="Ingrese su email..." required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input class="inputs" type="password" id="passwordReg" placeholder="Ingrese su contraseña..." required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="btn-cont">
+                        <button class="btn" type="submit">Registrarse Ahora</button>
+                    </div>
+                    
+                    </form>
+                    <div class="contErrorMsjReg" id="errorReg"></div>
+                    <div class="contSuccesMsjReg" id="succesReg"></div>
+                    <div class="pregCuenta">
+                        <p>Ya tienes una cuenta?<button onclick="redirigirLogin()" id="callLogin">Iniciar Sesion Ahora</button></p>
+                    </div>
+                </div>
+               
+                
+            </div>
+        
+            
+        </section>
+
+
+  <main class="hide" id="mainContAllIndex">
 <section class="home-inicio">
     <div class="home-text">
         <h1 class="h1-text">Encontra las entradas para tu concierto donde sea que estes!</h1>
         <span class="span-text">Tu lugar para tus visitas a los mejores entretenimientos.</span>
     
         <div class="cont-btn">
-<a href="./page/conciertos.html" class="btn">Encontra tu Concierto <i class="fa-solid fa-arrow-alt-circle-right flecha-btn"></i></a>
+<a href="./page/conciertos.html" id="btn-toForm" onclick="toForms()" class="btn btn-home-text">Encontra tu Concierto <i class="fa-solid fa-arrow-alt-circle-right flecha-btn"></i></a>
 
 </div>
     </div>
@@ -247,7 +319,9 @@
     </div>
 </footer>
 
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./js/index.js"></script>
+<script src="./js/dataBaseUsers.js"></script>
 <script src="./js/loaders.js"></script>
 </body>
 </html>

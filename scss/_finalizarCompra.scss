@@ -107,13 +107,15 @@ font-weight: 800;
     border-radius: 50px;
     font-family: 'Poppins';
     top: 200px;
-    position: absolute;
+    position: relative;
 }
 
 .section-after-compra .icono{
     font-size: 90px;
    color: green;
     overflow: hidden;
+
+    top: 0;
 }
  .section-after-compra .after-btn-compra {
     height: 40px;
@@ -144,7 +146,7 @@ background-color: $color1;
 border-radius: 10px;
 font-weight: 800;
 
-}
+}z
 
 
 .hidepay{
@@ -154,3 +156,31 @@ font-weight: 800;
 .removehide{
     display: block;
 }
+/* function succesReg(){
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Usuario registrado.Haga click en el boton "Inciar ahora",para poder logearse',
+        showConfirmButton: false,
+        timer: 1800
+    })
+    
+}
+
+
+function errorReg(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Parece que algo salio mal...',
+        text: 'email o usuario ya registrados,intente con otros datos.',
+    })
+}
+
+function errorLog(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Parece que algo salio mal...',
+        text: 'email o contraseña incorrectas,pruebe de nuevo.',
+    })
+}
+ */

@@ -83,7 +83,7 @@ header .cont-logo figure img {
   background: url(../images/img-banner-inicio/banner-inicio.jpg);
   background-size: cover;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -92,10 +92,13 @@ header .cont-logo figure img {
 .home-inicio::before {
   content: "";
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-color: rgb(0, 0, 0, 0.7);
   position: absolute;
+  
 }
+
+
 
 .home-inicio .home-text {
   line-height: 3.5rem;
@@ -120,6 +123,11 @@ header .cont-logo figure img {
   color: #e9e41d;
 }
 
+
+.home-text .cont-btn{
+  position: relative;
+}
+
 .home-inicio .home-text .btn {
   text-decoration: none;
   font-family: "Bungee";
@@ -128,7 +136,11 @@ header .cont-logo figure img {
   padding: 5px;
   margin-top: 20px;
   font-size: 16px;
+ 
 }
+
+
+
 
 .home-text .btn .flecha-btn {
   margin-left: 10px;
@@ -487,6 +499,163 @@ footer .cont-footer {
       80% {background-size:9px 100%,9px 100%,9px 80% }
   }
 
+  .main-logReg{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+    width: 100%;
+    background-image: url(../images/img-banner-inicio/banner-inicio.jpg);
+    background-size: cover;
+background-repeat: no-repeat;
+}
+
+  .container-login{
+
+    width: 600px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px black;
+        height: auto;
+        
+    
+    }
+    
+    .container-login .forms{
+        padding: 36px;
+    }
+    
+    .forms .title-login{
+        position: relative;
+        font-family: 'Poppins';
+        font-size: 34px;
+    }
+    .forms .title-login::before{
+        content: "";
+        width: 35px;
+        height: 5px;
+        background: $color1;
+        position: absolute;
+        top: 40px;
+    }
+    
+    .forms .input-box{
+        margin-top: 20px;
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+    
+    
+    .input-box .inputs{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+       outline: none;
+       border: none;
+        border-bottom: 2px solid $color1;
+        padding: 0 35px;
+    }
+    
+    .input-box i{
+        position: absolute;
+        top: 35%;
+        left: 0;
+    }
+    
+    .forms .btn-cont{
+        display: flex;
+        flex-direction: column;
+       justify-content: center;
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .btn-cont .btn{
+        color: black;
+        background-color: $color1;
+        font-family: 'Poppins';
+        font-weight: 800;
+        border: 2px solid white;
+        box-shadow: 2px 2px 4px white;
+        padding: 20px;
+        
+        
+    }
+    
+    .forms .pregCuenta{
+        display: flex;
+        justify-content: center;
+        font-family: 'Poppins'
+    }
+    
+    
+    .container-register{
+        @extend .container-login;
+        top: 0;
+        width: 800px;
+      
+    
+    }
+    
+    .container-register .form-register{
+        @extend .forms;
+    }
+    
+    .form-register .title-register{
+        @extend .title-login;
+    }
+    
+    .form-register .error-reg{
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-family: 'Poppins';
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 16px;
+    }
+    
+    .error-reg .i{
+        font-size: 30px;
+    }
+    
+    .form-register .succes-reg{
+        @extend .error-reg;
+        background-color: greenyellow;
+    }
+    
+    
+    .error-log{
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-family: 'Poppins';
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 16px;
+    
+    
+    }
+    
+    .error-log .i{
+        font-size: 30px;
+    }
+    
+
+    .hide{
+      display: none;
+    }
+
   @media (min-width: 320px) and (max-width: 600px) {
   header .cont-logo figure a img {
       height: 50px;
@@ -576,4 +745,4 @@ footer .cont-footer {
 
 
 @import "_conciertos.scss";
-@import "_finalizarCompra.scss"
+@import "_finalizarCompra.scss";

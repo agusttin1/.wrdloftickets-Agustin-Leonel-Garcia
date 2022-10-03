@@ -85,7 +85,7 @@ header .cont-logo figure img {
   background: url(../images/img-banner-inicio/banner-inicio.jpg);
   background-size: cover;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -94,7 +94,7 @@ header .cont-logo figure img {
 .home-inicio::before, .home-inicio-concierto::before {
   content: "";
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
 }
@@ -118,6 +118,10 @@ header .cont-logo figure img {
 
 .home-inicio .home-text span, .home-inicio-concierto .home-text span {
   color: #e9e41d;
+}
+
+.home-text .cont-btn {
+  position: relative;
 }
 
 .home-inicio .home-text .btn, .home-inicio-concierto .home-text .btn {
@@ -488,6 +492,141 @@ footer .cont-footer {
     background-size: 9px 100%, 9px 100%, 9px 80%;
   }
 }
+.main-logReg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 1000px;
+  width: 100%;
+  background-image: url(../images/img-banner-inicio/banner-inicio.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-login, .container-register {
+  width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px black;
+  height: auto;
+}
+
+.container-login .forms, .container-register .forms, .container-register .form-register {
+  padding: 36px;
+}
+
+.forms .title-login, .forms .form-register .title-register, .form-register .forms .title-register, .container-register .form-register .title-login, .container-register .form-register .title-register {
+  position: relative;
+  font-family: "Poppins";
+  font-size: 34px;
+}
+
+.forms .title-login::before, .forms .form-register .title-register::before, .form-register .forms .title-register::before, .container-register .form-register .title-login::before, .container-register .form-register .title-register::before {
+  content: "";
+  width: 35px;
+  height: 5px;
+  background: #e9e41d;
+  position: absolute;
+  top: 40px;
+}
+
+.forms .input-box, .container-register .form-register .input-box {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.input-box .inputs {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #e9e41d;
+  padding: 0 35px;
+}
+
+.input-box i {
+  position: absolute;
+  top: 35%;
+  left: 0;
+}
+
+.forms .btn-cont, .container-register .form-register .btn-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-cont .btn {
+  color: black;
+  background-color: #e9e41d;
+  font-family: "Poppins";
+  font-weight: 800;
+  border: 2px solid white;
+  box-shadow: 2px 2px 4px white;
+  padding: 20px;
+}
+
+.forms .pregCuenta, .container-register .form-register .pregCuenta {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins";
+}
+
+.container-register {
+  top: 0;
+  width: 800px;
+}
+
+.form-register .error-reg, .form-register .succes-reg {
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Poppins";
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+.error-reg .i, .form-register .succes-reg .i {
+  font-size: 30px;
+}
+
+.form-register .succes-reg {
+  background-color: greenyellow;
+}
+
+.error-log {
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Poppins";
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+.error-log .i {
+  font-size: 30px;
+}
+
+.hide {
+  display: none;
+}
+
 @media (min-width: 320px) and (max-width: 600px) {
   header .cont-logo figure a img {
     height: 50px;
@@ -968,14 +1107,6 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   color: white;
 }
 
-.d-block {
-  display: block;
-}
-
-.toas-close {
-  color: black;
-}
-
 @media (max-width: 1024px) {
   .features-cont {
     flex-direction: column;
@@ -1087,13 +1218,14 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   border-radius: 50px;
   font-family: "Poppins";
   top: 200px;
-  position: absolute;
+  position: relative;
 }
 
 .section-after-compra .icono {
   font-size: 90px;
   color: green;
   overflow: hidden;
+  top: 0;
 }
 
 .section-after-compra .after-btn-compra {
@@ -1125,12 +1257,41 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   font-weight: 800;
 }
 
-.hidepay {
+z .hidepay {
   display: none;
 }
 
 .removehide {
   display: block;
 }
+
+/* function succesReg(){
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Usuario registrado.Haga click en el boton "Inciar ahora",para poder logearse',
+        showConfirmButton: false,
+        timer: 1800
+    })
+
+}
+
+
+function errorReg(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Parece que algo salio mal...',
+        text: 'email o usuario ya registrados,intente con otros datos.',
+    })
+}
+
+function errorLog(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Parece que algo salio mal...',
+        text: 'email o contraseña incorrectas,pruebe de nuevo.',
+    })
+}
+ */
 
 /*# sourceMappingURL=styles.css.map */
