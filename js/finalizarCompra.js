@@ -30,7 +30,7 @@ callDivsAfterCompra.innerHTML=`
     <h1 class="after-compra-title">Muchas Gracias,Por su compra! <span class="dataAResaltar">${callNameValue.value}</span></h1>
     <p class="after-compra-text">Tus datos fueron verificados correctamente.Pronto le llegara un comprobante de su compra al correo de  <span class="dataAResaltar">${callEmail.value}.</span> </p>
     <p class="after-compra-text">Si llegase a surgir algun incoveniente lo estaremos contactando por dicho email o por su numero de telefono <span class="dataAResaltar">${callTelefono.value}.</span> </p>
-    <button class="after-btn-compra"><a href="../index.html">Continuar</a></button>
+    <button class="after-btn-compra"><a href="./inicio.html">Continuar</a></button>
 `
 
 callSectionAfterCompra.appendChild(callDivsAfterCompra)

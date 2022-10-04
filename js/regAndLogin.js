@@ -1,4 +1,3 @@
-
 class users{
   constructor(user,Email,Password){
       this.user=user
@@ -33,10 +32,6 @@ const callContErrorMsjReg = document.getElementById(`errorReg`)
 const callContErrorLog = document.getElementById(`errorLog`)
 
 
-const callMainCont =document.getElementById(`mainContAllIndex`)
-const callMainContForms = document.getElementById(`main-logReg`)
-
-const callNavCont = document.getElementById(`cont-nav`)
 /* inicializador de eventos */
 function iniciarEventos(){
   callFormReg.onsubmit = (e) => registro(e)
@@ -80,6 +75,7 @@ e.preventDefault()
 function login(e){
   let userPwdLog = callPasswordLog.value
   let userEmailLog = callEmailLog.value
+
   
 
   const checkEmailLog = arrCuentas.some((emailsInArr)=> emailsInArr.Email == userEmailLog)
@@ -88,12 +84,8 @@ function login(e){
   
   if (checkEmailLog && checkPwdLog){
 
-    callMainContForms.classList.add(`hide`)
-    callNavCont.classList.remove(`hide`)
-    callMainCont.classList.remove(`hide`)
-  
-   
-  
+  location.href="./page/inicio.html"
+
   }else{
   errorLog()
 
@@ -161,17 +153,7 @@ function succesReg(){
     })
   }
   
-  
-  
-  const callContOfUser = document.getElementById(`cont-icon-user`)
-  let callContUserOptions = document.getElementById(`optionsForUser`)
-  let callOptionLogOut = document.getElementById(`loginOut`)
-  
-  function clickInTheIconUser (){
-    callContUserOptions.classList.remove(`hide`)
-   
-  }
-  
+
   function clickInTheOptionLogOut (){
     Swal.fire({
       title: 'Estas seguro que desea cerrar sesion?',
@@ -187,23 +169,21 @@ function succesReg(){
           'Sesion Cerrada!',
           'Redirigiendolo hacia el formulario.',
           'success',
-          callMainContForms.classList.remove(`hide`),
-        callNavCont.classList.add(`hide`),
-        callMainCont.classList.add(`hide`),
+       location.href="../index.html",
         localStorage.removeItem(`key-entrada`),
         carrito=[]
-         
+        
         )
         
       }
     })
-   
+  
   
   }
 
 function actualizarUsuariosStorage(){
- let usersJSON = JSON.stringify(arrCuentas)
- localStorage.setItem(`usersKeys`, usersJSON)
+let usersJSON = JSON.stringify(arrCuentas)
+localStorage.setItem(`usersKeys`, usersJSON)
 
 }
 
@@ -216,9 +196,31 @@ function ObtenerUsuariosStorage(){
   
 }
 
+// fnction a ejecutar en inicio.html
 
+function clickInTheOptionLogOut (){
+  Swal.fire({
+    title: 'Estas seguro que desea cerrar sesion?',
+    text: `PERDERA,las entradas que selecciono`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Cerrar Sesion de todas formas!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+    
+        location.href="../index.html"
+      localStorage.removeItem(`key-entrada`)
+      carrito=[]
+       
+      
+      
+    }
+  })
+ 
 
-
+}
 
 
 function mainLogReg(){
