@@ -8,18 +8,10 @@ let callEmail = document.getElementById(`email`)
 const callSectionAfterCompra = document.getElementById(`cont-section`)
 const callForm = document.getElementById(`form-payment`)
 const callContForm = document.getElementById(`contenedor-form`)
+let callBtnPay = document.getElementById(`payChek`)
 
-
-
-
-function iniciarEventos(){
-    callForm.onsubmit = (e) => formPay(e)
-}
-
-function formPay(e){
-   e.preventDefault()
-callContForm.classList.add(`hide`)
-
+function contAfterBuy(){
+    callContForm.classList.add(`hide`)
 callSectionAfterCompra.classList.remove(`hide`)
 
 let callDivsAfterCompra = document.createElement(`div`)
@@ -34,16 +26,31 @@ callDivsAfterCompra.innerHTML=`
 `
 
 callSectionAfterCompra.appendChild(callDivsAfterCompra)
+
 }
 
-iniciarEventos()
 
 
+document.getElementById('form-payment')
+.addEventListener('submit', function(event) {
+event.preventDefault();
 
+callBtnPay.value = 'Checking...';
 
+const serviceID = 'default_service';
+const templateID = 'template_y57vnxr';
 
-
-
+emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+    callBtnPay.value = 'CheckOut';
+    contAfterBuy()
+    localStorage.removeItem(`key-entrada`)
+    carrito=[]
+    }, (err) => {
+    callBtnPay.value = 'CheckOut';
+    alert(JSON.stringify(err));
+    });
+});
     
 
 

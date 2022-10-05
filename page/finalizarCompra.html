@@ -26,24 +26,26 @@
       <form class="cont-payment" id="form-payment">
         <h1 class="titleFormPay">Informacion Personal</h1>
       <label>Nombre Y Apellido</label>
-      <input type="text" id="name" class="payInputCont" placeholder="ej. Juan Pablo" required >
+      <input type="text" id="name" class="payInputCont" name="nombre" placeholder="ej. Juan Pablo" required >
       <label>Numero de telefono</label>
-      <input type="text" class="payInputCont" id="numero" placeholder="ej. (num de Area segun tu pais) 1234 5678" required >
+      <input type="text" class="payInputCont" id="numero" name="numeroTelefono"placeholder="ej. (num de Area segun tu pais) 1234 5678" required >
       <label>Email</label>
-      <input type="email"  class="payInputCont" id="email" placeholder="ej. pabloj@gmail.com" required>
+      <input type="email"  class="payInputCont" id="email" name="email"placeholder="ej. pabloj@gmail.com" required>
       <h1 class="titleFormPay">Informacion de tarjeta</h1>
       <div class="cont-card-img">
       <img src="../png/features/visa.png" alt="VisaCard" width 40="" class="card-icon"  required>
       <img src="../png/features/master.png" alt="masterCard" width 40="" class="card-icon"  required>
       </div>
-      <input type="text" class="payInputCont"  id="numberCard" placeholder="1234-2222-4444-5555" required>
+      <input type="text" class="payInputCont"  id="numberCard" name="numeroTarjeta" placeholder="1234-2222-4444-5555" required>
       <div class="card-info">
-      <input type="text" class="payInputCont sm" placeholder="MM" id="mm" required>
-      <input type="text" class="payInputCont sm" placeholder="YY" id="yyy" required>
-      <input type="text" class="payInputCont sm" placeholder="ej. 123" id="cvv" required>
+      <input type="text" class="payInputCont sm" name="mm"placeholder="MM" id="mm" required>
+      <input type="text" class="payInputCont sm" name="yy"placeholder="YY" id="yyy" required>
+      <input type="text" class="payInputCont sm"name="cvv" placeholder="ej. 123" id="cvv" required>
       </div>
-      <button class="CheckOutPay" type="sumbit" id="payChek">CheckOut</button>
+      <button class="CheckOutPay btn btn-success" type="sumbit" id="payChek" >CheckOut</button>
       </form>
+      <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript"> emailjs.init('0nZQvNu1LklvXXHGM')</script>
     </div>
 
     <div class="cont-section hide " id="cont-section">
@@ -65,7 +67,12 @@
           </div>
       </div>
     </footer>
+
+
+
+
   <script src="../js/finalizarCompra.js"></script>
+
   <script src="../js/stockEntradas.js"></script>
   <script src="../js/loaders.js"></script>
 
