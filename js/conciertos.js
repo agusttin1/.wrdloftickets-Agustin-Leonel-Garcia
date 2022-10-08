@@ -218,6 +218,7 @@ callContInModalCarrito.innerHTML=``
                             actualizarEntradaStorage()
 
     })
+    console.log(carrito)
 
 callContadorCarrito.innerText=carrito.length
 callPrecioTotal.innerText = carrito.reduce((acc,el)=> acc + el.cantidad * el.precio,0).toFixed(2)
@@ -268,7 +269,7 @@ carritoFuncional()
 }  
 
 function main() {
-entradasMostrar()
+consularEntradasJson()/// funcion traida desde stockEntradas.js
 contenedorFiltros()
 obtenerEntradaStorage() 
 
