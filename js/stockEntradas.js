@@ -12,10 +12,11 @@
                           const response = await fetch("../json/jsonEntradas.json")
                           const data = await response.json()
                           allEntradas = [...data]
-                          entradasMostrar()
+                          
                         } catch (error) {
                             
                         }
+                        entradasMostrar()
                     }
 
 

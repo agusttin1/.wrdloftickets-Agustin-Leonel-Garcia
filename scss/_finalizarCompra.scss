@@ -156,31 +156,3 @@ font-weight: 800;
 .removehide{
     display: block;
 }
-/* function succesReg(){
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Usuario registrado.Haga click en el boton "Inciar ahora",para poder logearse',
-        showConfirmButton: false,
-        timer: 1800
-    })
-    
-}
-
-
-function errorReg(){
-    Swal.fire({
-        icon: 'error',
-        title: 'Parece que algo salio mal...',
-        text: 'email o usuario ya registrados,intente con otros datos.',
-    })
-}
-
-function errorLog(){
-    Swal.fire({
-        icon: 'error',
-        title: 'Parece que algo salio mal...',
-        text: 'email o contraseña incorrectas,pruebe de nuevo.',
-    })
-}
- */

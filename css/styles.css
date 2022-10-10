@@ -490,14 +490,20 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   right: 0;
   background-color: white;
   height: 84vh;
+  transform: translateX(700px);
+  transition: all 0.9s ease-in-out;
   z-index: 9999;
   top: 130px;
   color: black;
-  display: flex;
   box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   -webkit-box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   overflow: scroll;
+}
+
+.modal-contenedorAnimation {
+  transform: translateX(0);
+  display: block;
 }
 
 .modal-contenedor::-webkit-scrollbar {
@@ -821,34 +827,6 @@ z .hidepay {
   display: block;
 }
 
-/* function succesReg(){
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Usuario registrado.Haga click en el boton "Inciar ahora",para poder logearse',
-        showConfirmButton: false,
-        timer: 1800
-    })
-
-}
-
-
-function errorReg(){
-    Swal.fire({
-        icon: 'error',
-        title: 'Parece que algo salio mal...',
-        text: 'email o usuario ya registrados,intente con otros datos.',
-    })
-}
-
-function errorLog(){
-    Swal.fire({
-        icon: 'error',
-        title: 'Parece que algo salio mal...',
-        text: 'email o contraseña incorrectas,pruebe de nuevo.',
-    })
-}
- */
 * {
   margin: 0;
   padding: 0;

@@ -19,7 +19,7 @@
     </div>
     </header>
 
-<main style="height: 100vh;">
+<main class="cont-main"style="height: 100vh;">
 
   <div class="paymentCont" id="allContPayment">
     <div class="cont-form" id="contenedor-form">
@@ -43,16 +43,18 @@
       <input type="text" class="payInputCont sm"name="cvv" placeholder="ej. 123" id="cvv" required>
       </div>
       <button class="CheckOutPay btn btn-success" type="sumbit" id="payChek" >CheckOut</button>
+      <p class="cont-producto-precio">Precio Total: $<span id="precioTotalEntradas">0</span></p>
       </form>
-      <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript"> emailjs.init('0nZQvNu1LklvXXHGM')</script>
     </div>
 
     <div class="cont-section hide " id="cont-section">
-     
     </div>
-  </div>
+  </div> 
+ 
 
+  <div class="contCarritoPay" id="carritoId" style="background-color: red ;">
+  
+  </div>
   </main>
 
   
@@ -68,12 +70,13 @@
       </div>
     </footer>
 
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript"> emailjs.init('0nZQvNu1LklvXXHGM')</script>
+    
 
-
-
+    
   <script src="../js/finalizarCompra.js"></script>
 
-  <script src="../js/stockEntradas.js"></script>
   <script src="../js/loaders.js"></script>
 
 
