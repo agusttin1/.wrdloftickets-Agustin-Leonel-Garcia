@@ -13,17 +13,28 @@ background-repeat: no-repeat;
 
 } 
 
-
+.cont-main{
+    display: flex;
+   margin-bottom: 50px;
+    padding: 15px;
+justify-content: center;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+}
 
 .paymentCont{
     margin-top: 50px;
+    display: flex;
+    height: auto;
+
 }
 
 .paymentCont .cont-payment{
     display: flex;
     flex-direction: column;
-    width: 800px;
-    height: 740px;
+    width: 770px;
+    height: 690px;
     margin: auto;
     padding: 40px 50px;
     margin-bottom: 50px;
@@ -31,7 +42,7 @@ background-repeat: no-repeat;
   box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
   background-color: white;
   font-family: 'Poppins';
-  top: 0;
+  top: 0px;
   left: 0;
   right: 0;
   border-radius: 50px;
@@ -99,14 +110,14 @@ font-weight: 800;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    width: 800px;
+    width: 900px;
     height: auto;
     margin: 0 auto;
     padding: 15px;
     text-align: center;
     border-radius: 50px;
     font-family: 'Poppins';
-    top: 200px;
+
     position: relative;
 }
 
@@ -146,7 +157,50 @@ background-color: $color1;
 border-radius: 10px;
 font-weight: 800;
 
-}z
+}
+
+ .contCarritoPay{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin-left: 65px;
+  height:auto;
+padding: 20px 40px;
+-webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+background-color: white;
+font-family: 'Poppins';
+
+border-radius: 50px;
+font-family: 'Poppins';
+} 
+
+.contCarritoPay .contCarrito .titleCont .tittleInfoPay{
+
+        font-size:22px;
+    font-weight: 800;
+}
+
+
+.contCarritoPay .contTotalEntradas{
+text-align: center;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+.contCarritoPay .boxTotal{
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Bungee';
+    border-top: 2px solid $color1;
+    border-bottom: 2px solid $color1;
+    padding: 10px;
+    
+}
+
+
+
 
 
 .hidepay{

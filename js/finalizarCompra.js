@@ -1,17 +1,73 @@
-//////////////////////////////contenido a agregar/////////////////////////////////
-
-
+//////////////////////////////llamo a los id de cada input del formulario para poder usarlos dentro de la funcion contAfterBuy/////////////////////////////////
 
 let callNameValue = document.getElementById(`name`)
 let callTelefono = document.getElementById(`numero`)
 let callEmail = document.getElementById(`email`)
-const callSectionAfterCompra = document.getElementById(`cont-section`)
-const callForm = document.getElementById(`form-payment`)
-const callContForm = document.getElementById(`contenedor-form`)
-let callBtnPay = document.getElementById(`payChek`)
 
+//////////////////////////////Llamada  a los id del contenedor a mostrar despues de completar el form y al contenedor del form/////////////////////////////////
+const callSectionAfterCompra = document.getElementById(`cont-section`)
+const callContForm = document.getElementById(`contenedor-form`)
+
+//////////////////////////////llamada a los id para usar en la funcion estructuraEntradasInFC/////////////////////////////////
+let callPrecioTotal = document.getElementById(`precioTotalAPagar`);
+let callCarritoId = document.getElementById(`allEntradasMostrar`)
+let callMainContCarrito = document.getElementsByClassName(`contCarritoPay`)[0]
+
+console.log(callMainContCarrito)
+
+//////////////////////////////array para almacenar las entradas seleccionadas y mostrarlas en un contenedor/////////////////////////////////
+let arrCarritoCont =[]
+
+
+
+
+
+//////////////////////////////Funcion para guardar el llamado al localStorage y usarlo para mostrar la info de la compra/////////////////////////////////
+
+function obtenerEntradas (){
+
+    let callEntradasJson = localStorage.getItem(`key-entrada`)
+if(callEntradasJson){
+    arrCarritoCont=JSON.parse(callEntradasJson)
+}
+}
+
+
+
+//////////////////////////////Funcion que contiene estructura a mostrar la informacion de la compra /////////////////////////////////
+
+function estrucutraEntradasInFC(){
+
+    callCarritoId.innerHTML=``
+
+    arrCarritoCont.forEach((dataOfCarrito)=>{
+        let dvCarrito = document.createElement(`div`);
+    dvCarrito.className = `entradas-in-carrito`;
+    dvCarrito.innerHTML = `
+            
+                            <div class="cont-img">
+                            <img src=${dataOfCarrito.img} alt="">
+                            </div>
+                            <div class="body-info-modal">
+                            <p class="card-text">${dataOfCarrito.descripEntrada}</p>
+                            <p class="cantidad-entrada">Cantidad: ${dataOfCarrito.cantidad}</p>
+                            </div>
+                            <span class="price-event-modal">$ ${dataOfCarrito.precio}</span>
+                            `;
+
+                            callCarritoId.appendChild(dvCarrito)
+                            
+
+    })
+    callPrecioTotal.innerText = arrCarritoCont
+    .reduce((acc, el) => acc + el.cantidad * el.precio, 0)
+    .toFixed(2);
+}
+
+
+//////////////////////////////Funcion contenedora de una estructura que aparece luego de completar el formulario/////////////////////////////////
 function contAfterBuy(){
-    callContForm.classList.add(`hide`)
+
 callSectionAfterCompra.classList.remove(`hide`)
 
 let callDivsAfterCompra = document.createElement(`div`)
@@ -29,10 +85,12 @@ callSectionAfterCompra.appendChild(callDivsAfterCompra)
 
 }
 
+let callBtnPay = document.getElementById(`payChek`)
+const callForm = document.getElementById(`form-payment`)
 
 
-document.getElementById('form-payment')
-.addEventListener('submit', function(event) {
+function eventoApiEmailJs(){
+callForm.addEventListener('submit', function(event) {
 event.preventDefault();
 
 callBtnPay.value = 'Checking...';
@@ -40,19 +98,31 @@ callBtnPay.value = 'Checking...';
 const serviceID = 'default_service';
 const templateID = 'template_y57vnxr';
 
-emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
+emailjs.sendForm(serviceID, templateID, this).then(() => {
     callBtnPay.value = 'CheckOut';
+    callMainContCarrito.classList.add(`hidepay`)
+    callContForm.classList.add(`hide`)
     contAfterBuy()
     localStorage.removeItem(`key-entrada`)
     carrito=[]
-    }, (err) => {
+    arrCarritoCont=[]
+    }, 
+    (err) => {
     callBtnPay.value = 'CheckOut';
     alert(JSON.stringify(err));
     });
 });
-    
+}
 
+
+
+function main(){
+     eventoApiEmailJs() 
+obtenerEntradas()
+estrucutraEntradasInFC()
+}
+
+main()
 
 
 

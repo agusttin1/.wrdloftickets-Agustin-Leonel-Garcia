@@ -21,39 +21,54 @@
 
 <main class="cont-main"style="height: 100vh;">
 
-  <div class="paymentCont" id="allContPayment">
-    <div class="cont-form" id="contenedor-form">
-      <form class="cont-payment" id="form-payment">
-        <h1 class="titleFormPay">Informacion Personal</h1>
-      <label>Nombre Y Apellido</label>
-      <input type="text" id="name" class="payInputCont" name="nombre" placeholder="ej. Juan Pablo" required >
-      <label>Numero de telefono</label>
-      <input type="text" class="payInputCont" id="numero" name="numeroTelefono"placeholder="ej. (num de Area segun tu pais) 1234 5678" required >
-      <label>Email</label>
-      <input type="email"  class="payInputCont" id="email" name="email"placeholder="ej. pabloj@gmail.com" required>
-      <h1 class="titleFormPay">Informacion de tarjeta</h1>
-      <div class="cont-card-img">
-      <img src="../png/features/visa.png" alt="VisaCard" width 40="" class="card-icon"  required>
-      <img src="../png/features/master.png" alt="masterCard" width 40="" class="card-icon"  required>
-      </div>
-      <input type="text" class="payInputCont"  id="numberCard" name="numeroTarjeta" placeholder="1234-2222-4444-5555" required>
-      <div class="card-info">
-      <input type="text" class="payInputCont sm" name="mm"placeholder="MM" id="mm" required>
-      <input type="text" class="payInputCont sm" name="yy"placeholder="YY" id="yyy" required>
-      <input type="text" class="payInputCont sm"name="cvv" placeholder="ej. 123" id="cvv" required>
-      </div>
-      <button class="CheckOutPay btn btn-success" type="sumbit" id="payChek" >CheckOut</button>
-      <p class="cont-producto-precio">Precio Total: $<span id="precioTotalEntradas">0</span></p>
-      </form>
-    </div>
-
-    <div class="cont-section hide " id="cont-section">
-    </div>
-  </div> 
- 
-
-  <div class="contCarritoPay" id="carritoId" style="background-color: red ;">
   
+    <div class="paymentCont" id="allContPayment">
+      <div class="cont-form" id="contenedor-form">
+        <form class="cont-payment" id="form-payment">
+          <h1 class="titleFormPay">Informacion Personal</h1>
+        <label>Nombre Y Apellido</label>
+        <input type="text" id="name" class="payInputCont" name="nombre" placeholder="ej. Juan Pablo" required >
+        <label>Numero de telefono</label>
+        <input type="text" class="payInputCont" id="numero" name="numeroTelefono"placeholder="ej. (num de Area segun tu pais) 1234 5678" required >
+        <label>Email</label>
+        <input type="email"  class="payInputCont" id="email" name="email"placeholder="ej. pabloj@gmail.com" required>
+        <h1 class="titleFormPay">Informacion de tarjeta</h1>
+        <div class="cont-card-img">
+        <img src="../png/features/visa.png" alt="VisaCard" width 40="" class="card-icon"  required>
+        <img src="../png/features/master.png" alt="masterCard" width 40="" class="card-icon"  required>
+        </div>
+        <input type="text" class="payInputCont"  id="numberCard" name="numeroTarjeta" placeholder="1234-2222-4444-5555" required>
+        <div class="card-info">
+        <input type="text" class="payInputCont sm" name="mm"placeholder="MM" id="mm" required>
+        <input type="text" class="payInputCont sm" name="yy"placeholder="YY" id="yyy" required>
+        <input type="text" class="payInputCont sm"name="cvv" placeholder="ej. 123" id="cvv" required>
+        </div>
+        <button class="CheckOutPay btn btn-success" type="sumbit" id="payChek" >CheckOut</button>
+        
+        </form>
+      </div>
+  
+      
+    </div> 
+   
+  
+  
+  
+  <div class="contCarritoPay" id="carritoId" >
+    <div class="contCarrito">
+    <div class="titleCont">
+      <h1 class="tittleInfoPay  ">Informacion de su compra</h1>
+    </div>
+    <div class="entradas" id="allEntradasMostrar"></div>
+  </div>
+  
+  <div class="boxTotal">
+    <p class="contTotalEntradas ">Precio Total: $<span id="precioTotalAPagar">0</span></p>
+    </div>
+  </div>
+
+
+  <div class="cont-section hide " id="cont-section">
   </div>
   </main>
 
@@ -76,7 +91,6 @@
 
     
   <script src="../js/finalizarCompra.js"></script>
-
   <script src="../js/loaders.js"></script>
 
 
