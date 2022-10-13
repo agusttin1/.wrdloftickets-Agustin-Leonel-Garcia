@@ -141,6 +141,40 @@
   width: 800px;
 }
 
+.container-register .pregCuenta .btnForm {
+  text-decoration: none;
+  font-family: "Bungee";
+  color: black;
+  background-color: #e9e41d;
+  border: 2px solid #e9e41d;
+  padding: 5px;
+  font-size: 12px;
+  margin-left: 10px;
+  border: 2px black solid;
+  transition: all 0.5s;
+}
+
+.container-register .pregCuenta .btnForm:hover {
+  background-color: #d2d03f;
+}
+
+.container-login .pregCuenta .btnForm, .container-register .pregCuenta .btnForm {
+  text-decoration: none;
+  font-family: "Bungee";
+  color: black;
+  background-color: #e9e41d;
+  border: 2px solid #e9e41d;
+  padding: 5px;
+  font-size: 12px;
+  margin-left: 10px;
+  border: 2px black solid;
+  transition: all 0.5s;
+}
+
+.container-login .pregCuenta .btnForm:hover, .container-register .pregCuenta .btnForm:hover {
+  background-color: #d2d03f;
+}
+
 .form-register .error-reg, .form-register .succes-reg {
   background-color: red;
   padding: 10px;

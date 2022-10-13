@@ -6,26 +6,21 @@ function filtrosEntradas(value) {
   let callButtonsCategoria = document.querySelectorAll(".button-value");
 
   callButtonsCategoria.forEach((callButtonsARecorrer) => {
-    value == callButtonsARecorrer.innerText
-      ? callButtonsARecorrer.classList.add(`active`)
-      : callButtonsARecorrer.classList.remove(`active`);
+    value == callButtonsARecorrer.innerText ? callButtonsARecorrer.classList.add(`active`) : callButtonsARecorrer.classList.remove(`active`);
   });
 
   let elements = document.querySelectorAll(".card-item");
   elements.forEach((elemento) => {
-    value == `All`
-      ? elemento.classList.remove(`hide`)
-      : elemento.classList.contains(value)
-      ? elemento.classList.remove(`hide`)
-      : elemento.classList.add(`hide`);
+    value == `All` ? elemento.classList.remove(`hide`) : elemento.classList.contains(value) ? elemento.classList.remove(`hide`) : elemento.classList.add(`hide`);
   });
 }
 
 //funcion anonima para que cargue automaticamente los productos a partir de los filtros
-window.addEventListener(`load`, () => {
+function loadAllCards(){
+  window.addEventListener(`load`, () => {
   filtrosEntradas(`All`);
 });
-
+}
 const callContAllFiltros = document.getElementById(`entradas`);
 
 function contenedorFiltros() {
@@ -161,7 +156,7 @@ callBtnVaciarCarrito.addEventListener(`click`, () => {
       confirmButtonText: "Vaciar Carrito",
       cancelButtonText: "Cancelar",
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
+
       if (result.isConfirmed) {
         carrito.length = 0;
         carritoFuncional();
@@ -266,6 +261,7 @@ function obtenerEntradaStorage() {
 
 function main() {
   consularEntradasJson(); /// funcion traida desde stockEntradas.js
+  loadAllCards()
   contenedorFiltros();
   obtenerEntradaStorage();
 }

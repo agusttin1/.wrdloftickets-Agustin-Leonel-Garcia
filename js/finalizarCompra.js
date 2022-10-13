@@ -117,7 +117,7 @@ emailjs.sendForm(serviceID, templateID, this).then(() => {
 
 
 function main(){
-     eventoApiEmailJs() 
+eventoApiEmailJs() 
 obtenerEntradas()
 estrucutraEntradasInFC()
 }

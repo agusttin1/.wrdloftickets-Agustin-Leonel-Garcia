@@ -147,6 +147,45 @@ background-repeat: no-repeat;
       
     
     }
+
+    .container-register .pregCuenta .btnForm{
+      text-decoration: none;
+      font-family: "Bungee";
+      color: black;
+      background-color: $color1;
+      border: 2px solid #e9e41d;
+      padding: 5px;
+      font-size: 12px;
+      margin-left: 10px;
+      border: 2px black solid;
+      transition: all 0.5s;
+    }
+
+
+    .container-register .pregCuenta .btnForm:hover{
+      background-color: #d2d03f
+
+    }
+
+    .container-login .pregCuenta .btnForm{
+      text-decoration: none;
+      font-family: "Bungee";
+      color: black;
+      background-color: $color1;
+      border: 2px solid #e9e41d;
+      padding: 5px;
+      font-size: 12px;
+      margin-left: 10px;
+      border: 2px black solid;
+      transition: all 0.5s;
+      
+    }
+
+    .container-login .pregCuenta .btnForm:hover{
+      background-color: #d2d03f
+    }
+
+    
     
     .container-register .form-register{
         @extend .forms;
