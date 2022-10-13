@@ -85,6 +85,9 @@ callSectionAfterCompra.appendChild(callDivsAfterCompra)
 
 }
 
+
+//////////////////////////////Variables y funcion para utilizar la api de/////////////////////////////////
+
 let callBtnPay = document.getElementById(`payChek`)
 const callForm = document.getElementById(`form-payment`)
 
@@ -111,6 +114,8 @@ emailjs.sendForm(serviceID, templateID, this).then(() => {
     callBtnPay.value = 'CheckOut';
     alert(JSON.stringify(err));
     });
+
+    
 });
 }
 

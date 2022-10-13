@@ -724,6 +724,10 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   background-repeat: no-repeat;
 }
 
+.position-relative {
+  background: black;
+}
+
 .cont-main {
   display: flex;
   margin-bottom: 50px;

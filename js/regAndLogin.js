@@ -153,34 +153,6 @@ function succesReg(){
     })
   }
   
-
-  function clickInTheOptionLogOut (){
-    Swal.fire({
-      title: 'Estas seguro que desea cerrar sesion?',
-      text: "<strong>Perdera</strong> las entradas que selecciono dentro  del carrito!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Cerrar Sesion de todas formas!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Sesion Cerrada!',
-          'Redirigiendolo hacia el formulario.',
-          'success',
-       location.href="../index.html",
-        localStorage.removeItem(`key-entrada`),
-        carrito=[]
-        
-        )
-        
-      }
-    })
-  
-  
-  }
-
 function actualizarUsuariosStorage(){
 let usersJSON = JSON.stringify(arrCuentas)
 localStorage.setItem(`usersKeys`, usersJSON)
@@ -204,6 +176,7 @@ function mainLogReg(){
   iniciarEventos()
   sweetForIntro()
 ObtenerUsuariosStorage()
+
 }
 
 mainLogReg()

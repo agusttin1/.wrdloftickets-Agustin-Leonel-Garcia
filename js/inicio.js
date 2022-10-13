@@ -1,4 +1,4 @@
-function clickInTheOptionLogOut (){
+ function clickInTheOptionLogOut (){
     Swal.fire({
       title: 'Estas seguro que desea cerrar sesion?',
       text: `PERDERA,las entradas que selecciono`,
@@ -16,3 +16,4 @@ function clickInTheOptionLogOut (){
       }
     })
   }
+ 
