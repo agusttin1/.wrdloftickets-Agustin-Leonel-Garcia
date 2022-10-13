@@ -13,11 +13,6 @@ function clickInTheOptionLogOut (){
           location.href="../index.html"
         localStorage.removeItem(`key-entrada`)
         carrito=[]
-         
-        
-        
       }
     })
-   
-  
   }
