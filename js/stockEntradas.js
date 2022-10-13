@@ -9,10 +9,11 @@
                     async function consularEntradasJson(){         ///function para mostrar todo el stock de entradas.Funcion llamado en conciertos.html
 
                         try {
-                          const response = await fetch("../json/jsonEntradas.json")
+                          const response = await fetch("https://633f27680dbc3309f3c5e1f3.mockapi.io/entradas")
                           const data = await response.json()
                           allEntradas = [...data]
                           entradasMostrar()
+                          
                           
                         } catch (error) {
                             

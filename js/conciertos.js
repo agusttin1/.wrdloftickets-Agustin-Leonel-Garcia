@@ -71,7 +71,7 @@ function entradasMostrar() {
   for (const datosEntrada of allEntradas) {
     let columnsEntradas = document.createElement(`div`);
     columnsEntradas.id += `entrada-${datosEntrada.id}`;
-    columnsEntradas.className = `${datosEntrada.categoria}  hide card-item ${datosEntrada.pais}`;
+    columnsEntradas.className = `${datosEntrada.categoria} card-item ${datosEntrada.pais}`;
     columnsEntradas.innerHTML = `
                     <div class="card"  style="width: 18rem;">
                     <img src=${datosEntrada.img} class="card-img-top" alt="...">
@@ -258,12 +258,10 @@ function obtenerEntradaStorage() {
 }
 
 
-
 function main() {
   consularEntradasJson(); /// funcion traida desde stockEntradas.js
-  loadAllCards()
   contenedorFiltros();
+  loadAllCards();
   obtenerEntradaStorage();
 }
-
 main();
