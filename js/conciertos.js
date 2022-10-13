@@ -6,12 +6,18 @@ function filtrosEntradas(value) {
   let callButtonsCategoria = document.querySelectorAll(".button-value");
 
   callButtonsCategoria.forEach((callButtonsARecorrer) => {
-    value == callButtonsARecorrer.innerText ? callButtonsARecorrer.classList.add(`active`) : callButtonsARecorrer.classList.remove(`active`);
+
+    const elBtn = callButtonsARecorrer
+
+    value == elBtn.innerText ? elBtn.classList.add(`active`) : elBtn.classList.remove(`active`);
   });
 
   let elements = document.querySelectorAll(".card-item");
   elements.forEach((elemento) => {
-    value == `All` ? elemento.classList.remove(`hide`) : elemento.classList.contains(value) ? elemento.classList.remove(`hide`) : elemento.classList.add(`hide`);
+
+    const el = elemento.classList
+    
+    value === `All` || el.contains(value) ? el.remove(`hide`) : el.add(`hide`)
   });
 }
 
@@ -20,46 +26,6 @@ function loadAllCards(){
   window.addEventListener(`load`, () => {
   filtrosEntradas(`All`);
 });
-}
-const callContAllFiltros = document.getElementById(`entradas`);
-
-function contenedorFiltros() {
-  let estructuraFiltros = document.createElement(`div`);
-  estructuraFiltros.innerHTML = `
-    
-    <div class="titulo-filtros">
-        <h3>Filtros Por Categoria</h3>
-        </div>
-        <div class="row cont-buttons">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 allFiltrosCont " >
-        <button class="button-value" onclick="filtrosEntradas('All')">All</button>
-        <button class="button-value" onclick="filtrosEntradas('Trap')">Trap</button>
-        <button class="button-value" onclick="filtrosEntradas('Hip-Hop/Rap')">Hip-Hop/Rap</button>
-        <button class="button-value" onclick="filtrosEntradas('Alternativa/Independiente')">Alternativa/Independiente</button>
-        <button class="button-value" onclick="filtrosEntradas('Rock')">Rock</button>
-        </div>
-        <div class="col-sm-1"></div>
-        </div>
-        <div class="titulo-filtros">
-        <h3>Filtros Por Pais del Artista</h3>
-        </div>
-        <div class="row cont-buttons">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10 allFiltrosCont " >
-        <button class="button-value" onclick="filtrosEntradas('All')">All</button>
-        <button class="button-value" onclick="filtrosEntradas('Ingles')">Ingles</button>
-        <button class="button-value" onclick="filtrosEntradas('Argentino')">Argentino</button>
-        <button class="button-value" onclick="filtrosEntradas('EEUU')">EEUU</button> 
-        
-        </div>
-
-        <div class="col-sm-1"></div>
-        </div>
-        </div>
-        
-    `;
-  callContAllFiltros.appendChild(estructuraFiltros);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -260,7 +226,6 @@ function obtenerEntradaStorage() {
 
 function main() {
   consularEntradasJson(); /// funcion traida desde stockEntradas.js
-  contenedorFiltros();
   loadAllCards();
   obtenerEntradaStorage();
 }
