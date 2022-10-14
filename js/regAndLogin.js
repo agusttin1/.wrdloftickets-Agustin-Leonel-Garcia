@@ -76,8 +76,6 @@ function login(e){
   let userPwdLog = callPasswordLog.value
   let userEmailLog = callEmailLog.value
 
-  
-
   const checkEmailLog = arrCuentas.some((emailsInArr)=> emailsInArr.Email == userEmailLog)
   const checkPwdLog = arrCuentas.some((pwdsInArr)=> pwdsInArr.Password == userPwdLog)
 
@@ -153,6 +151,7 @@ function succesReg(){
     })
   }
   
+
 function actualizarUsuariosStorage(){
 let usersJSON = JSON.stringify(arrCuentas)
 localStorage.setItem(`usersKeys`, usersJSON)
@@ -173,10 +172,11 @@ function ObtenerUsuariosStorage(){
 
 
 function mainLogReg(){
-  iniciarEventos()
-  sweetForIntro()
-ObtenerUsuariosStorage()
 
+  sweetForIntro()
+  iniciarEventos()
+  
+ObtenerUsuariosStorage()
 }
 
 mainLogReg()

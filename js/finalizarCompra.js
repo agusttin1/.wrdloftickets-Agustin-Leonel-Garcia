@@ -78,12 +78,18 @@ callDivsAfterCompra.innerHTML=`
     <h1 class="after-compra-title">Muchas Gracias,Por su compra! <span class="dataAResaltar">${callNameValue.value}</span></h1>
     <p class="after-compra-text">Tus datos fueron verificados correctamente.Pronto le llegara un comprobante de su compra al correo de  <span class="dataAResaltar">${callEmail.value}.</span> </p>
     <p class="after-compra-text">Si llegase a surgir algun incoveniente lo estaremos contactando por dicho email o por su numero de telefono <span class="dataAResaltar">${callTelefono.value}.</span> </p>
-    <button class="after-btn-compra"><a href="./inicio.html">Continuar</a></button>
+    <button class="after-btn-compra" id="btnContAfterBuy" "><a href="./inicio.html">Continuar</a></button>
 `
 
 callSectionAfterCompra.appendChild(callDivsAfterCompra)
 
 }
+
+function ocultarContAfterCheck(){
+    callMainContCarrito.classList.add(`hidepay`)
+    callContForm.classList.add(`hide`)
+}
+
 
 
 //////////////////////////////Variables y funcion para utilizar la api de/////////////////////////////////
@@ -92,37 +98,67 @@ let callBtnPay = document.getElementById(`payChek`)
 const callForm = document.getElementById(`form-payment`)
 
 
-function eventoApiEmailJs(){
+function chequeoDeData(){
+
 callForm.addEventListener('submit', function(event) {
 event.preventDefault();
 
-callBtnPay.value = 'Checking...';
+/// Incluyo un sweet alert con un intervalo de tiempo para que simule un la espera de los chequeos de datos
+let timerInterval
+Swal.fire({
+title: 'Procesando su compra',
+html: 'Espere unos segundos.',
+timer: 2000,
+timerProgressBar: true,
+didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+    b.textContent = Swal.getTimerLeft()
+    }, 100)
 
-const serviceID = 'default_service';
-const templateID = 'template_y57vnxr';
+},willClose: () => {
+    clearInterval(timerInterval)
 
-emailjs.sendForm(serviceID, templateID, this).then(() => {
-    callBtnPay.value = 'CheckOut';
+}}).then((result) => {
+
+if (result.dismiss === Swal.DismissReason.timer) {
+        
+    ocultarContAfterCheck()
+    contAfterBuy()
+
+    /// codigo a ejecutar para la funcion de la api de emailJs.
+    callBtnPay.value = 'Checking...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_y57vnxr';
+    
+    emailjs.sendForm(serviceID, templateID, this).then(() => {
+        callBtnPay.value = 'CheckOut';
+        localStorage.removeItem(`key-entrada`)
+        carrito=[]
+        arrCarritoCont=[]
+        }, 
+        (err) => {
+        callBtnPay.value = 'CheckOut';
+        alert(JSON.stringify(err));
+        });
+}
+})
+
+});
+} 
+
+
+function ocultarContAfterCheck(){
     callMainContCarrito.classList.add(`hidepay`)
     callContForm.classList.add(`hide`)
-    contAfterBuy()
-    localStorage.removeItem(`key-entrada`)
-    carrito=[]
-    arrCarritoCont=[]
-    }, 
-    (err) => {
-    callBtnPay.value = 'CheckOut';
-    alert(JSON.stringify(err));
-    });
-
-    
-});
 }
 
 
-
 function main(){
-eventoApiEmailJs() 
+eventoApiEmailJs()
+afterBuy()
 obtenerEntradas()
 estrucutraEntradasInFC()
 }
@@ -134,3 +170,5 @@ main()
     
 
  
+
+    
