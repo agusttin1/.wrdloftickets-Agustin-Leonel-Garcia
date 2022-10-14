@@ -18,10 +18,6 @@ console.log(callMainContCarrito)
 //////////////////////////////array para almacenar las entradas seleccionadas y mostrarlas en un contenedor/////////////////////////////////
 let arrCarritoCont =[]
 
-
-
-
-
 //////////////////////////////Funcion para guardar el llamado al localStorage y usarlo para mostrar la info de la compra/////////////////////////////////
 
 function obtenerEntradas (){
@@ -85,6 +81,8 @@ callSectionAfterCompra.appendChild(callDivsAfterCompra)
 
 }
 
+
+//////////////////////////////Funcion para ocultar contenido del formulario y del contenedor de la info de compras/////////////////////////////////
 function ocultarContAfterCheck(){
     callMainContCarrito.classList.add(`hidepay`)
     callContForm.classList.add(`hide`)
@@ -92,11 +90,14 @@ function ocultarContAfterCheck(){
 
 
 
-//////////////////////////////Variables y funcion para utilizar la api de/////////////////////////////////
+
+//////////////////////////////Variables para utilizar en la funcion chequeoDeData/////////////////////////////////
 
 let callBtnPay = document.getElementById(`payChek`)
 const callForm = document.getElementById(`form-payment`)
 
+
+//////////////////////////////Funcion que hace funcional el formulario, chequeando datos y enviando email usando una api/////////////////////////////////
 
 function chequeoDeData(){
 
@@ -150,15 +151,8 @@ if (result.dismiss === Swal.DismissReason.timer) {
 } 
 
 
-function ocultarContAfterCheck(){
-    callMainContCarrito.classList.add(`hidepay`)
-    callContForm.classList.add(`hide`)
-}
-
-
 function main(){
-eventoApiEmailJs()
-afterBuy()
+chequeoDeData()
 obtenerEntradas()
 estrucutraEntradasInFC()
 }
