@@ -199,13 +199,9 @@ callModalCarrito.addEventListener(`click`, (e) => {
 });
 
 callBtnComprar.addEventListener(`click`,()=>{
- 
-  if(carrito.length){
-    location.href=`./finalizarCompra.html`
-  }else{
-   errorToFCompra()
-  }
-  
+
+(carrito.length) ?  location.href=`./finalizarCompra.html` : errorToFCompra()
+
 })
 
 callBtnVaciarCarrito.addEventListener(`click`, () => {
