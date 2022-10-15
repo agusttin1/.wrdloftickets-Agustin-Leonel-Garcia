@@ -1,3 +1,6 @@
+
+const callAllContPayment = document.getElementById(`allContPayment`)
+
 //////////////////////////////llamo a los id de cada input del formulario para poder usarlos dentro de la funcion contAfterBuy/////////////////////////////////
 
 let callNameValue = document.getElementById(`name`)
@@ -19,6 +22,8 @@ console.log(callMainContCarrito)
 let arrCarritoCont =[]
 
 //////////////////////////////Funcion para guardar el llamado al localStorage y usarlo para mostrar la info de la compra/////////////////////////////////
+
+
 
 function obtenerEntradas (){
 
@@ -152,9 +157,11 @@ if (result.dismiss === Swal.DismissReason.timer) {
 
 
 function main(){
-chequeoDeData()
 obtenerEntradas()
+chequeoDeData()
 estrucutraEntradasInFC()
+
+
 }
 
 main()

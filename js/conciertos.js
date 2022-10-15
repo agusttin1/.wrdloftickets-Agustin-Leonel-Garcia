@@ -136,12 +136,52 @@ function guardarEntradasEnCarrito(entradaId) {
 
 ///////////////////////////////MODAL + CARRITO FUNCIONAL(ONCLICKS DENTRO DEL CARRITO) ///////////////////////////////
 
+
+
+
+/////Funcion con un sweet alert a mostrar cuando se oprima el btn de vaciar carrito(si hay en entradas en el carrito)
+function questionVaciarCarrito(){
+  Swal.fire({
+    icon: "question",
+    title: "Estas seguro que deseas vaciar el carrito?",
+    showCancelButton: true,
+    confirmButtonText: "Vaciar Carrito",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+
+    if (result.isConfirmed) {
+      carrito.length = 0;
+      carritoFuncional();
+      actualizarEntradaStorage();
+      mostrarToastConfirmacion(`Se ha vaciado todo el carrito`,`ticketAgregado`);
+    }
+  });
+}
+/////Funcion con un sweet alert a mostrar cuando se oprima el btn de vaciar carrito(si no hay en entradas en el carrito)
+function errorVaciarCarrito(){
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "El carrito esta vacio agregue al menos una entrada, para poder vaciarlo.",
+  });
+}
+/////Funcion con un sweet alert a mostrar cuando se oprima el btn de finalizar compra(si no hay en entradas en el carrito)
+function errorToFCompra(){
+  Swal.fire({
+    title: 'ERROR!',
+    text: 'Agregue almenos una entrada para pode realizar una compra.',
+    imageUrl: '../images/img-banner-inicio/errorFinalizarCompra.png',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
+}
 const callContAllModal = document.getElementsByClassName(`modal-contenedor`)[0];
 const callBtnCerrarModal = document.getElementById(`carrito-cerrar`);
 const callBtnAbrirModal = document.getElementById(`carrito`);
-const callModalCarrito = document.getElementsByClassName(`modal-carrito`)[0];
 const callBtnVaciarCarrito = document.getElementById(`vaciar-carrito`);
 const callBtnComprar = document.getElementById(`compra-carrito`);
+const callModalCarrito = document.getElementsByClassName(`modal-carrito`)[0];
 
 callBtnAbrirModal.addEventListener(`click`, () => {
   callContAllModal.classList.toggle(`modal-contenedorAnimation`);
@@ -152,39 +192,29 @@ callBtnCerrarModal.addEventListener(`click`, () => {
 callContAllModal.addEventListener(`click`, () => {
   callContAllModal.classList.toggle(`modal-contenedorAnimation`);
 });
-callBtnVaciarCarrito.addEventListener(`click`, () => {
-  if (carrito.length) {
-    Swal.fire({
-      icon: "question",
-      title: "Estas seguro que deseas vaciar el carrito?",
-      showCancelButton: true,
-      confirmButtonText: "Vaciar Carrito",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-
-      if (result.isConfirmed) {
-        carrito.length = 0;
-        carritoFuncional();
-        actualizarEntradaStorage();
-        mostrarToastConfirmacion(
-          `Se ha vaciado todo el carrito`,
-          `ticketAgregado`
-        );
-      }
-    });
-  } else {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "El carrito esta vacio agregue al menos una entrada, para poder vaciarlo.",
-    });
-  }
-});
 
 /* EVENTO PARA EVITAR QUE AL HACER CLICK DENTRO DEL MODAL, DESAPAREZCA */
 callModalCarrito.addEventListener(`click`, (e) => {
   e.stopPropagation();
 });
+
+callBtnComprar.addEventListener(`click`,()=>{
+ 
+  if(carrito.length){
+    location.href=`./finalizarCompra.html`
+  }else{
+   errorToFCompra()
+  }
+  
+})
+
+callBtnVaciarCarrito.addEventListener(`click`, () => {
+
+  (carrito.length) ? questionVaciarCarrito() : errorVaciarCarrito()
+
+});
+
+
 
 const callContInModalCarrito = document.getElementById(`carrito-contenedor`);
 
@@ -221,6 +251,9 @@ const carritoFuncional = () => {
     .reduce((acc, el) => acc + el.cantidad * el.precio, 0)
     .toFixed(2);
 };
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
