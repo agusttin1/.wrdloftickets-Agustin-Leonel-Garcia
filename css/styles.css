@@ -216,78 +216,6 @@
   display: none;
 }
 
-@media (min-width: 320px) and (max-width: 600px) {
-  header .cont-logo figure a img {
-    height: 50px;
-  }
-}
-@media (min-width: 600px) and (max-width: 850px) {
-  .sobre-nosotros .titulo-nosotros h2 {
-    font-size: 30px;
-  }
-  .sobre-nosotros .text-nosotros p {
-    font-size: 18px;
-  }
-  .sobre-nosotros .lema-cont h4 {
-    font-size: 18px;
-  }
-  .artistas .header-artistas h2 {
-    font-size: 30px;
-  }
-  .artistas .header-artistas span {
-    font-size: 20px;
-  }
-  .testimonios .testimonios-header h2 {
-    font-size: 30px;
-  }
-  .testimonios .testimonios-header span {
-    font-size: 20px;
-  }
-}
-@media (max-width: 1100px) {
-  .menu {
-    display: inline-block;
-    position: relative;
-  }
-  .menu .cont-secciones {
-    position: absolute;
-    max-width: 300px;
-    visibility: hidden;
-    transition: all 250ms ease-in-out;
-    transform: scaleY(0.1);
-    transform-origin: top right;
-    z-index: 999999999;
-    background: black;
-    list-style: none;
-    right: 20px;
-    top: 40px;
-    height: 325px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid #e9e41d;
-  }
-  .menu .btn-menu {
-    display: block;
-    margin-right: 10px;
-    font-size: 28px;
-    color: #e9e41d;
-  }
-  .menu .cont-secciones .secciones-link {
-    text-align: center;
-    color: #e9e41d;
-    width: 140px;
-    display: block;
-    font-size: 16px;
-  }
-  #menu-btn-check {
-    display: none;
-  }
-  #menu-btn-check:checked + ul.cont-secciones {
-    transform: scaleY(1);
-    visibility: visible;
-  }
-}
 * {
   padding: 0;
   margin: 0;
@@ -747,7 +675,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   display: flex;
   flex-direction: column;
   width: 770px;
-  height: 690px;
+  height: 720px;
   margin: auto;
   padding: 40px 50px;
   margin-bottom: 50px;
@@ -771,16 +699,11 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   font-weight: 400;
 }
 
-.cont-payment .payInputCont {
+.cont-payment .payInputCont, .cont-payment #selector {
   padding: 8px;
   margin: 6px 0px;
   border: none;
   border-bottom: 2px solid #e9e41d;
-}
-
-.cont-payment .payInputCont::placeholder {
-  color: #a3a3a3;
-  font-weight: 400;
 }
 
 .cont-payment .card-icon {
@@ -788,10 +711,6 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   margin-right: 10px;
   justify-content: space-between;
   height: 50px;
-}
-
-.cont-card-img .sm {
-  width: 30%;
 }
 
 .cont-payment .CheckOutPay {
@@ -805,6 +724,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   cursor: pointer;
   padding: 5px;
   font-weight: 800;
+  margin-top: 10px;
 }
 
 .paymentCont .cont-section {
@@ -1258,37 +1178,77 @@ footer .cont-footer {
   padding: 10px;
 }
 
-.home-inicio .home-text, .home-inicio-concierto .home-text {
-  margin: 0;
-  margin-left: 10px;
+@media (min-width: 320px) and (max-width: 600px) {
+  header .cont-logo figure a img {
+    height: 50px;
+  }
 }
-
-.home-inicio .home-text h1, .home-inicio-concierto .home-text h1 {
-  font-size: 25px;
+@media (min-width: 600px) and (max-width: 850px) {
+  .sobre-nosotros .titulo-nosotros h2 {
+    font-size: 30px;
+  }
+  .sobre-nosotros .text-nosotros p {
+    font-size: 18px;
+  }
+  .sobre-nosotros .lema-cont h4 {
+    font-size: 18px;
+  }
+  .artistas .header-artistas h2 {
+    font-size: 30px;
+  }
+  .artistas .header-artistas span {
+    font-size: 20px;
+  }
+  .testimonios .testimonios-header h2 {
+    font-size: 30px;
+  }
+  .testimonios .testimonios-header span {
+    font-size: 20px;
+  }
 }
-
-.home-text span {
-  font-size: 18px;
-}
-
-.sobre-nosotros .titulo-nosotros h2 {
-  font-size: 25px;
-}
-
-.sobre-nosotros .text-nosotros p {
-  font-size: 16px;
-}
-
-.sobre-nosotros .lema-cont h4 {
-  font-size: 18px;
-}
-
-.artistas .header-artistas h2 {
-  font-size: 25px;
-}
-
-.artistas .header-artistas span {
-  font-size: 18px;
+@media (max-width: 1100px) {
+  .menu {
+    display: inline-block;
+    position: relative;
+  }
+  .menu .cont-secciones {
+    position: absolute;
+    max-width: 300px;
+    visibility: hidden;
+    transition: all 250ms ease-in-out;
+    transform: scaleY(0.1);
+    transform-origin: top right;
+    z-index: 999999999;
+    background: black;
+    list-style: none;
+    right: 20px;
+    top: 40px;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid #e9e41d;
+  }
+  .menu .btn-menu {
+    display: block;
+    margin-right: 10px;
+    font-size: 28px;
+    color: #e9e41d;
+  }
+  .menu .cont-secciones .secciones-link {
+    text-align: center;
+    color: #e9e41d;
+    width: 140px;
+    display: block;
+    font-size: 16px;
+  }
+  #menu-btn-check {
+    display: none;
+  }
+  #menu-btn-check:checked + ul.cont-secciones {
+    transform: scaleY(1);
+    visibility: visible;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

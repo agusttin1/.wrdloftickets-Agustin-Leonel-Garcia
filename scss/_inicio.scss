@@ -368,36 +368,91 @@ footer .cont-footer {
   height: auto;
   font-size: 15px;
   padding: 10px;
+
 }
 
-.home-inicio .home-text {
-    margin: 0;
-    margin-left: 10px;
-}
-.home-inicio .home-text h1 {
-    font-size: 25px;
-}
-
-  .home-text span {
-    font-size: 18px;
+  @media (min-width: 320px) and (max-width: 600px) {
+    header .cont-logo figure a img {
+        height: 50px;
+    }
+    }  
+  
+  @media (min-width: 600px) and (max-width: 850px) {
+    .sobre-nosotros .titulo-nosotros h2 {
+      font-size: 30px;
+    }
+  
+  
+    .sobre-nosotros .text-nosotros p {
+      font-size: 18px;
+    }
+  
+    .sobre-nosotros .lema-cont h4 {
+      font-size: 18px;
+    }
+  
+    .artistas .header-artistas h2 {
+      font-size: 30px;
+    }
+  
+    .artistas .header-artistas span {
+      font-size: 20px;
+    }
+  
+    .testimonios .testimonios-header h2 {
+      font-size: 30px;
+    }
+  
+    .testimonios .testimonios-header span {
+      font-size: 20px;
+    }
   }
-
-  .sobre-nosotros .titulo-nosotros h2 {
-    font-size: 25px;
-  }
-
-  .sobre-nosotros .text-nosotros p {
-    font-size: 16px;
-  }
-
-  .sobre-nosotros .lema-cont h4 {
-    font-size: 18px;
-  }
-
-  .artistas .header-artistas h2 {
-    font-size: 25px;
-  }
-
-  .artistas .header-artistas span {
-    font-size: 18px;
+  
+  @media (max-width: 1100px) {
+    .menu {
+      display: inline-block;
+      position: relative;
+    }
+  
+    .menu .cont-secciones {
+      position: absolute;
+      max-width: 300px;
+      visibility: hidden;
+      transition: all 250ms ease-in-out;
+      transform: scaleY(0.1);
+      transform-origin: top right;
+      z-index: 999999999;
+      background: black;
+      list-style: none;
+      right: 20px;
+      top: 40px;
+      height: 325px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      border: 1px solid #e9e41d;
+    }
+  
+    .menu .btn-menu {
+      display: block;
+      margin-right: 10px;
+      font-size: 28px;
+      color: #e9e41d;
+    }
+    .menu .cont-secciones .secciones-link {
+      text-align: center;
+      color: #e9e41d;
+      width: 140px;
+      display: block;
+      font-size: 16px;
+    }
+  
+    #menu-btn-check {
+      display: none;
+    }
+  
+    #menu-btn-check:checked + ul.cont-secciones {
+      transform: scaleY(1);
+      visibility: visible;
+    }
   }

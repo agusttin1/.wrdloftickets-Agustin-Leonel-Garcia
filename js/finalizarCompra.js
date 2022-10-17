@@ -16,7 +16,7 @@ let callPrecioTotal = document.getElementById(`precioTotalAPagar`);
 let callCarritoId = document.getElementById(`allEntradasMostrar`)
 let callMainContCarrito = document.getElementsByClassName(`contCarritoPay`)[0]
 
-console.log(callMainContCarrito)
+
 
 //////////////////////////////array para almacenar las entradas seleccionadas y mostrarlas en un contenedor/////////////////////////////////
 let arrCarritoCont 
@@ -170,10 +170,10 @@ function cuptas(){
     let enDoceCuotas =(precioTotal/optionsCuotas[3]).toFixed(2)
 
     callSelector.innerHTML=`
-    <option >1 Pago de <span id="priceCuotas">${enUnaCuota}</span></option>
-    <option >3 Pagos de <span id="priceCuotas">${enTresCuotas}</span></option>
-    <option >6 Pagos de <span id="priceCuotas">${enSeisCuotas}</span></option>
-    <option >12 Pagos de <span id="priceCuotas">${enDoceCuotas}</span></option>
+    <option class="option" >1 Pago de <span id="priceCuotas">${enUnaCuota}</span></option>
+    <option class="option">3 Pagos de <span id="priceCuotas">${enTresCuotas}</span></option>
+    <option class="option">6 Pagos de <span id="priceCuotas">${enSeisCuotas}</span></option>
+    <option class="option">12 Pagos de <span id="priceCuotas">${enDoceCuotas}</span></option>
 
     `
 }
