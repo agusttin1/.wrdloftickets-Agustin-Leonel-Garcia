@@ -19,7 +19,9 @@ let callMainContCarrito = document.getElementsByClassName(`contCarritoPay`)[0]
 console.log(callMainContCarrito)
 
 //////////////////////////////array para almacenar las entradas seleccionadas y mostrarlas en un contenedor/////////////////////////////////
-let arrCarritoCont =[]
+let arrCarritoCont 
+//////////////////////////////array donde estan almacenadas las cuotas disponibles a la hora de pagar/////////////////////////////////
+let optionsCuotas = [1,3,6,12]
 
 //////////////////////////////Funcion para guardar el llamado al localStorage y usarlo para mostrar la info de la compra/////////////////////////////////
 
@@ -28,9 +30,14 @@ let arrCarritoCont =[]
 function obtenerEntradas (){
 
     let callEntradasJson = localStorage.getItem(`key-entrada`)
+    let EntradasToBuy = JSON.parse(callEntradasJson)
+    
 if(callEntradasJson){
-    arrCarritoCont=JSON.parse(callEntradasJson)
+    arrCarritoCont=[...EntradasToBuy]
 }
+
+
+
 }
 
 
@@ -60,9 +67,7 @@ function estrucutraEntradasInFC(){
                             
 
     })
-    callPrecioTotal.innerText = arrCarritoCont
-    .reduce((acc, el) => acc + el.cantidad * el.precio, 0)
-    .toFixed(2);
+    callPrecioTotal.innerText = arrCarritoCont.reduce((acc, el) => acc + el.cantidad * el.precio, 0).toFixed(2);
 }
 
 
@@ -155,21 +160,31 @@ if (result.dismiss === Swal.DismissReason.timer) {
 });
 } 
 
+//////////////////////////////llamada del nodo selector para despues inyectarle las options/////////////////////////////////
+let callSelector = document.getElementById(`selector`)
+function cuptas(){
+   let precioTotal = callPrecioTotal.innerText
+    let enUnaCuota =(precioTotal/optionsCuotas[0]).toFixed(2)
+    let enTresCuotas =(precioTotal/optionsCuotas[1]).toFixed(2)
+    let enSeisCuotas =(precioTotal/optionsCuotas[2]).toFixed(2)
+    let enDoceCuotas =(precioTotal/optionsCuotas[3]).toFixed(2)
+
+    callSelector.innerHTML=`
+    <option >1 Pago de <span id="priceCuotas">${enUnaCuota}</span></option>
+    <option >3 Pagos de <span id="priceCuotas">${enTresCuotas}</span></option>
+    <option >6 Pagos de <span id="priceCuotas">${enSeisCuotas}</span></option>
+    <option >12 Pagos de <span id="priceCuotas">${enDoceCuotas}</span></option>
+
+    `
+}
 
 function main(){
 obtenerEntradas()
 chequeoDeData()
 estrucutraEntradasInFC()
+cuptas()
 
 
 }
 
 main()
-
-
-
-    
-
- 
-
-    

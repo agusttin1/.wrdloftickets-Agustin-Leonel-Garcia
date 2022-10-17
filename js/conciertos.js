@@ -243,9 +243,7 @@ const carritoFuncional = () => {
  
 
   callContadorCarrito.innerText = carrito.length;
-  callPrecioTotal.innerText = carrito
-    .reduce((acc, el) => acc + el.cantidad * el.precio, 0)
-    .toFixed(2);
+  callPrecioTotal.innerText = carrito.reduce((acc, el) => acc + el.cantidad * el.precio, 0).toFixed(2);
 };
 
 

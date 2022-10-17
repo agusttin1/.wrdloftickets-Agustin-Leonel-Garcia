@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Open+Sans:ital@1&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Bungee&family=Poppins:ital,wght@0,400;0,800;1,100;1,200;1,400;1,500&family=Roboto+Condensed:wght@300&display=swap");
@@ -773,8 +772,8 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 }
 
 .cont-payment .payInputCont {
-  padding: 10px;
-  margin: 10px 0px;
+  padding: 8px;
+  margin: 6px 0px;
   border: none;
   border-bottom: 2px solid #e9e41d;
 }
@@ -1125,94 +1124,6 @@ header .cont-logo figure img {
   line-height: 2;
 }
 
-.testimonios {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  position: relative;
-  flex-wrap: wrap;
-}
-
-.testimonios-cont .testimonios-header {
-  margin-top: 35px;
-  padding: 10px 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.testimonios-cont .testimonios-header h2 {
-  font-size: 40px;
-  font-family: "Bungee";
-  color: #e9e41d;
-  padding: 10px;
-}
-
-.testimonios-cont .testimonios-header span {
-  font-size: 24px;
-  color: white;
-  text-transform: uppercase;
-  font-family: "bungee";
-}
-
-.testimonios .testimonios-cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-  width: 100%;
-  font-family: "Poppins";
-  position: relative;
-  background-color: black;
-}
-
-.testimonios-cont .box-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.testimonios-cont .box-testimonio {
-  width: 500px;
-  box-shadow: 2px 2px 20px black;
-  background-color: rgb(255, 255, 255);
-  padding: 20px;
-  margin: 15px;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  margin-bottom: 20px;
-  height: auto;
-}
-
-.testimonios-cont .perfil-user .user-img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.testimonios-cont .perfil-user img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.box-testimonio .perfil-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.perfil-user .name-user {
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-.testimonios-cont .box-reseñas-stars {
-  color: #e9e41d;
-}
-
 .artistas {
   flex-wrap: wrap;
   display: flex;
@@ -1377,14 +1288,6 @@ footer .cont-footer {
 }
 
 .artistas .header-artistas span {
-  font-size: 18px;
-}
-
-.testimonios .testimonios-header h2 {
-  font-size: 25px;
-}
-
-.testimonios .testimonios-header span {
   font-size: 18px;
 }
 
