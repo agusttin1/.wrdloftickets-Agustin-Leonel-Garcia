@@ -115,8 +115,7 @@
   justify-content: center;
   height: 50px;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0 20px;
 }
 
 .btn-cont .btn {
@@ -238,9 +237,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   color: black;
   border: black 2px dashed;
   border-radius: 50px;
-  padding: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 0 5px 0 5px;
 }
 
 ::selection {
@@ -305,15 +302,13 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 }
 
 .all-cont-event .container {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0 20px;
 }
 
 .cont-filtros {
   box-shadow: 2px 2px 10px black;
   border-radius: 20px;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  margin: 40px 0 40px;
   padding: 15px;
   background-color: white;
 }
@@ -383,7 +378,6 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   font-family: "Bungee";
   color: black;
   padding: 10px;
-  padding-bottom: 25px;
 }
 
 .cont-eventos .title-events h3::before {
@@ -396,8 +390,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 
 .card {
   font-family: "Poppins";
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin: 0 10px 0 10px;
   border: 2px dashed black;
 }
 
@@ -491,8 +484,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 .modal-title #carrito-cerrar {
   border: none;
   font-size: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px 0 10px;
   border-radius: 50px;
   right: 0;
   right: 10px;
@@ -521,8 +513,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   align-items: center;
   width: 100%;
   border-bottom: 4px dashed #e9e41d;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding: 20px 0 10px;
   position: relative;
   border-left: 10px solid #f7f7b6;
   border-radius: 12px 0 12px 12px;
@@ -558,11 +549,9 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin: 10px 10px;
   border-radius: 50px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px 0 10px;
   font-size: large;
   background-color: red;
   border: 2px solid black;
@@ -676,9 +665,8 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   flex-direction: column;
   width: 770px;
   height: 720px;
-  margin: auto;
   padding: 40px 50px;
-  margin-bottom: 50px;
+  margin: 0 0 50px;
   -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
   background-color: white;
@@ -931,8 +919,7 @@ header .cont-logo figure img {
 
 .contUserOptions {
   background-color: #e9e41d;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding: 0 5px 0 5px;
   border-radius: 15px;
   font-family: "Poppins";
   color: black;
@@ -1083,8 +1070,7 @@ header .cont-logo figure img {
 }
 
 .artistas .cont-lista-artistas {
-  padding-bottom: 32px;
-  padding-top: 32px;
+  padding: 32px 0 32px;
   width: 100%;
 }
 
@@ -1102,16 +1088,10 @@ header .cont-logo figure img {
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  padding: 0;
   padding-right: 16px;
   display: block;
   transition: all 0.9s ease-in-out;
-  margin-bottom: 25px;
-  margin-top: 25px;
-}
-
-.card-artista:hover {
-  transform: scale(1.1);
+  margin: 25px 0 25px;
 }
 
 .card-artista .position-target {
@@ -1119,13 +1099,10 @@ header .cont-logo figure img {
   top: 10px;
   z-index: 2222222;
   left: 15px;
-  border-radius: 4px;
-  display: flex;
+  border-radius: 50px;
   color: #e9e41d;
   background-color: rgba(31, 31, 31, 0.8);
   padding: 5px;
-  align-items: center;
-  font-size: 15px;
 }
 
 .artistas .cont-lista-artistas .cards .card-artista .img-container {
@@ -1148,12 +1125,10 @@ header .cont-logo figure img {
   content: "";
   width: 100%;
   height: 100%;
-  z-index: 1;
 }
 
 .card-artista .contenido-container {
   position: absolute;
-  z-index: 88882;
   bottom: 12px;
   left: 12px;
   color: white;
@@ -1166,14 +1141,7 @@ footer {
   color: #e9e41d;
   border-top: 4px solid #e9e41d;
   font-family: "bungee";
-}
-
-footer .cont-footer {
-  display: flex;
-  justify-content: center;
   text-align: center;
-  width: 100%;
-  height: auto;
   font-size: 15px;
   padding: 10px;
 }
