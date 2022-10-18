@@ -4,16 +4,15 @@
 
 function filtrosEntradas(value) {
   let callButtonsCategoria = document.querySelectorAll(".button-value");
-
-  callButtonsCategoria.forEach((callButtonsARecorrer) => {
+    callButtonsCategoria.forEach((callButtonsARecorrer) => {
 
     const elBtn = callButtonsARecorrer
 
     value == elBtn.innerText ? elBtn.classList.add(`active`) : elBtn.classList.remove(`active`);
   });
 
-  let elements = document.querySelectorAll(".card-item");
-  elements.forEach((elemento) => {
+  let callClassCards = document.querySelectorAll(".card-item");
+  callClassCards.forEach((elemento) => {
 
     const el = elemento.classList
     
@@ -28,10 +27,9 @@ function loadAllCards(){
 });
 }
 
-
-const callContAllFiltros = document.getElementById(`entradas`);
-
 function contenedorFiltros() {
+  const callContAllFiltros = document.getElementById(`entradas`);
+
   let estructuraFiltros = document.createElement(`div`);
   estructuraFiltros.innerHTML = `
     
@@ -68,7 +66,25 @@ function contenedorFiltros() {
     `
     callContAllFiltros.appendChild(estructuraFiltros)
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////POP UP PARA MOSTRAR CUANDO SE AGREGA UNA ENTRADA AL CARRITO , CUANDO SE ELIMINA Y CUANDO SE VACIA EL CARRITO ///////////////////////////////
+
+function mostrarToastConfirmacion(msj, classAAgregar) {
+  Toastify({
+    text: msj,
+    duration: 3000,
+    close: true,
+    gravity: "bottom",
+    position: "right",
+    className: classAAgregar,
+  }).showToast();
+}
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ///////////////////////////////Inyeccion HTML desde js para mostrar las entradas disponibles Y evento en el boton de su card///////////////////////////////
 
 function entradasMostrar() {
@@ -112,8 +128,15 @@ function entradasMostrar() {
   }
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////Funciones para poder guardar las entradas en el carrito + funcion para poder eliminarlas///////////////////////////////
+
 function guardarEntradasEnCarrito(entradaId) {
-  const existeEntrada = carrito.some((entradaIdRecorrer) => entradaIdRecorrer.id === entradaId);
+  const existeEntrada = carrito.some(
+    (entradaIdRecorrer) => entradaIdRecorrer.id === entradaId
+  );
 
   if (existeEntrada) {
     carrito.map((encontrarId) => {
@@ -129,15 +152,60 @@ function guardarEntradasEnCarrito(entradaId) {
   carritoFuncional();
 }
 
+const eliminarItem = (id) => {
+  let borrarEntrada = carrito.find((entrada) => entrada.id === id);
+  let indiceABorrar = carrito.indexOf(borrarEntrada);
+  carrito.splice(indiceABorrar, 1);
+  carritoFuncional();
+  actualizarEntradaStorage();
+  mostrarToastConfirmacion(`Se ha eliminado una entrada`, `ticketEliminado`);
+};
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////Inyeccion HTML de la estructura del carrito///////////////////////////////
+
+const callContInModalCarrito = document.getElementById(`carrito-contenedor`);
+const callContadorCarrito = document.getElementById(`contador-carrito`);
+const callPrecioTotal = document.getElementById(`precioTotalEntradas`);
+
+const carritoFuncional = () => {
+  callContInModalCarrito.innerHTML = ``;
+
+  carrito.forEach((dataOfCarrito) => {
+    let contInCarrito = document.createElement(`div`);
+    contInCarrito.className = `entradas-in-carrito`;
+    contInCarrito.innerHTML = `
+            
+                            <div class="cont-img">
+                            <img src=${dataOfCarrito.img} alt="">
+                            </div>
+                            <div class="body-info-modal">
+                            <p class="card-text">${dataOfCarrito.descripEntrada}</p>
+                            <p class="cantidad-entrada">Cantidad: ${dataOfCarrito.cantidad}</p>
+                            </div>
+                            <span class="price-event-modal">$ ${dataOfCarrito.precio}</span>
+                            <button class="btn-eliminar-entrada" onclick="eliminarItem(${dataOfCarrito.id})"><i class="fas fa-trash-alt"></i></button>
+                            `;
+
+    callContInModalCarrito.appendChild(contInCarrito);
+    actualizarEntradaStorage();
+  });
+ 
+
+  callContadorCarrito.innerText = carrito.length;
+  callPrecioTotal.innerText = carrito.reduce((acc, el) => acc + el.cantidad * el.precio, 0).toFixed(2);
+};
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////MODAL + CARRITO FUNCIONAL(ONCLICKS DENTRO DEL CARRITO) ///////////////////////////////
-
-
+///////////////////////////////FUNCIONES UTILIZADAS DENTRO DE LOS BOTONES QUE CONTIENE EL MODAL ///////////////////////////////
 
 
 /////Funcion con un sweet alert a mostrar cuando se oprima el btn de vaciar carrito(si hay en entradas en el carrito)
+
 function questionVaciarCarrito(){
   Swal.fire({
     icon: "question",
@@ -155,7 +223,9 @@ function questionVaciarCarrito(){
     }
   });
 }
+
 /////Funcion con un sweet alert a mostrar cuando se oprima el btn de vaciar carrito(si no hay en entradas en el carrito)
+
 function errorVaciarCarrito(){
   Swal.fire({
     icon: "error",
@@ -163,7 +233,9 @@ function errorVaciarCarrito(){
     text: "El carrito esta vacio agregue al menos una entrada, para poder vaciarlo.",
   });
 }
+
 /////Funcion con un sweet alert a mostrar cuando se oprima el btn de finalizar compra(si no hay en entradas en el carrito)
+
 function errorToFCompra(){
   Swal.fire({
     title: 'ERROR!',
@@ -174,6 +246,13 @@ function errorToFCompra(){
     imageAlt: 'Custom image',
   })
 }
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////Llamados de variables, para generar el modal + eventos para el mismo objetivo ///////////////////////////////
+
 const callContAllModal = document.getElementsByClassName(`modal-contenedor`)[0];
 const callBtnCerrarModal = document.getElementById(`carrito-cerrar`);
 const callBtnAbrirModal = document.getElementById(`carrito`);
@@ -208,71 +287,9 @@ callBtnVaciarCarrito.addEventListener(`click`, () => {
 
 });
 
-
-
-const callContInModalCarrito = document.getElementById(`carrito-contenedor`);
-
-const callContadorCarrito = document.getElementById(`contador-carrito`);
-
-const callPrecioTotal = document.getElementById(`precioTotalEntradas`);
-
-const carritoFuncional = () => {
-  callContInModalCarrito.innerHTML = ``;
-
-  carrito.forEach((dataOfCarrito) => {
-    let contInCarrito = document.createElement(`div`);
-    contInCarrito.className = `entradas-in-carrito`;
-    contInCarrito.innerHTML = `
-            
-                            <div class="cont-img">
-                            <img src=${dataOfCarrito.img} alt="">
-                            </div>
-                            <div class="body-info-modal">
-                            <p class="card-text">${dataOfCarrito.descripEntrada}</p>
-                            <p class="cantidad-entrada">Cantidad: ${dataOfCarrito.cantidad}</p>
-                            </div>
-                            <span class="price-event-modal">$ ${dataOfCarrito.precio}</span>
-                            <button class="btn-eliminar-entrada" onclick="eliminarItem(${dataOfCarrito.id})"><i class="fas fa-trash-alt"></i></button>
-                            `;
-
-    callContInModalCarrito.appendChild(contInCarrito);
-    actualizarEntradaStorage();
-  });
- 
-
-  callContadorCarrito.innerText = carrito.length;
-  callPrecioTotal.innerText = carrito.reduce((acc, el) => acc + el.cantidad * el.precio, 0).toFixed(2);
-};
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////POP UP PARA MOSTRAR CUANDO SE AGREGA UNA ENTRADA AL CARRITO , CUANDO SE ELIMINA Y CUANDO SE VACIA EL CARRITO ///////////////////////////////
-
-function mostrarToastConfirmacion(msj, classAAgregar) {
-  Toastify({
-    text: msj,
-    duration: 3000,
-    close: true,
-    gravity: "bottom",
-    position: "right",
-    className: classAAgregar,
-  }).showToast();
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////FUNCION PARA PODER ELIMINAR ENTRADAS DENTRO DEL CARRITO + LOCALSTORAGE DE LAS ENTRADAS ///////////////////////////////
-
-const eliminarItem = (id) => {
-  let borrarEntrada = carrito.find((entrada) => entrada.id === id);
-  let indiceABorrar = carrito.indexOf(borrarEntrada);
-  carrito.splice(indiceABorrar, 1);
-  carritoFuncional();
-  actualizarEntradaStorage();
-  mostrarToastConfirmacion(`Se ha eliminado una entrada`, `ticketEliminado`);
-};
+/////////////////////////////// LOCALSTORAGE DE LAS ENTRADAS ///////////////////////////////
 
 function actualizarEntradaStorage() {
   let entradasJSON = JSON.stringify(carrito);
