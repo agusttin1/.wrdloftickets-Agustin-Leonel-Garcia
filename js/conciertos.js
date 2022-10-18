@@ -306,7 +306,7 @@ function obtenerEntradaStorage() {
 
 
 function main() {
-  consularEntradasJson(); /// funcion traida desde stockEntradas.js
+  consularEntradasApi(); /// funcion traida desde stockEntradas.js
   contenedorFiltros();
   loadAllCards();
   obtenerEntradaStorage();
