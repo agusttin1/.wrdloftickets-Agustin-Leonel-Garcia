@@ -218,6 +218,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 header .contAllMenuCarrito {
@@ -245,7 +246,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 }
 
 .home-inicio-concierto {
-  background-image: url(../images/img-banner-inicio/banner-concierto.jpg);
+  background-image: url("../images/img-banner-inicio/banner-concierto.jpg") !important;
 }
 
 .features-cont {
@@ -404,8 +405,8 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 }
 
 .card .card-body .btn-primary:hover {
-  border: 1px solid black;
-  color: #e9e41d;
+  border: 1px solid #e9e41d;
+  color: black;
   background-color: white;
 }
 
@@ -449,6 +450,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
   z-index: 9999;
   top: 130px;
   color: black;
+  visibility: hidden;
   box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   -webkit-box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: -12px 8px 30px 3px rgba(0, 0, 0, 0.52);
@@ -457,6 +459,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 
 .modal-contenedorAnimation {
   transform: translateX(0);
+  visibility: visible;
   display: block;
 }
 
@@ -599,6 +602,24 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra {
 
 .ticketEliminado {
   background: red;
+}
+
+.card .favoriteArtist {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.star {
+  color: white;
+}
+
+.starFavorite {
+  color: goldenrod;
 }
 
 .card-item {

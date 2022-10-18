@@ -162,7 +162,7 @@ if (result.dismiss === Swal.DismissReason.timer) {
 
 //////////////////////////////llamada del nodo selector para despues inyectarle las options/////////////////////////////////
 let callSelector = document.getElementById(`selector`)
-function cuptas(){
+function FuncionCuotas(){
    let precioTotal = callPrecioTotal.innerText
     let enUnaCuota =(precioTotal/optionsCuotas[0]).toFixed(2)
     let enTresCuotas =(precioTotal/optionsCuotas[1]).toFixed(2)
@@ -170,6 +170,7 @@ function cuptas(){
     let enDoceCuotas =(precioTotal/optionsCuotas[3]).toFixed(2)
 
     callSelector.innerHTML=`
+    <option class="option" >----Eliga una opcion---</option>
     <option class="option" >1 Pago de <span id="priceCuotas">${enUnaCuota}</span></option>
     <option class="option">3 Pagos de <span id="priceCuotas">${enTresCuotas}</span></option>
     <option class="option">6 Pagos de <span id="priceCuotas">${enSeisCuotas}</span></option>
@@ -182,7 +183,7 @@ function main(){
 obtenerEntradas()
 chequeoDeData()
 estrucutraEntradasInFC()
-cuptas()
+FuncionCuotas()
 
 
 }

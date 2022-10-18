@@ -113,9 +113,7 @@ function entradasMostrar() {
 }
 
 function guardarEntradasEnCarrito(entradaId) {
-  const existeEntrada = carrito.some(
-    (entradaIdRecorrer) => entradaIdRecorrer.id === entradaId
-  );
+  const existeEntrada = carrito.some((entradaIdRecorrer) => entradaIdRecorrer.id === entradaId);
 
   if (existeEntrada) {
     carrito.map((encontrarId) => {
