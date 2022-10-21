@@ -260,32 +260,44 @@ const callBtnVaciarCarrito = document.getElementById(`vaciar-carrito`);
 const callBtnComprar = document.getElementById(`compra-carrito`);
 const callModalCarrito = document.getElementsByClassName(`modal-carrito`)[0];
 
-callBtnAbrirModal.addEventListener(`click`, () => {
-  callContAllModal.classList.toggle(`modal-contenedorAnimation`);
-});
-callBtnCerrarModal.addEventListener(`click`, () => {
-  callContAllModal.classList.toggle(`modal-contenedorAnimation`);
-});
-callContAllModal.addEventListener(`click`, () => {
-  callContAllModal.classList.toggle(`modal-contenedorAnimation`);
-});
 
-/* EVENTO PARA EVITAR QUE AL HACER CLICK DENTRO DEL MODAL, DESAPAREZCA */
-callModalCarrito.addEventListener(`click`, (e) => {
-  e.stopPropagation();
-});
+function forEventsModal(){
 
-callBtnComprar.addEventListener(`click`,()=>{
+  callContAllModal.classList.toggle(`modal-contenedorAnimation`);
+
+}
+
+function forEventsContCarrito(e){
+
+e.stopPropagation()
+
+}
+
+function forEventBtnModalComprar(){
 
 (carrito.length) ?  location.href=`./finalizarCompra.html` : errorToFCompra()
 
-})
+}
 
-callBtnVaciarCarrito.addEventListener(`click`, () => {
+function forEventBtnVaciarCarrito(){
 
   (carrito.length) ? questionVaciarCarrito() : errorVaciarCarrito()
 
-});
+}
+
+callBtnAbrirModal.addEventListener(`click`, forEventsModal)
+  
+callBtnCerrarModal.addEventListener(`click`, forEventsModal)
+
+callContAllModal.addEventListener(`click`, forEventsModal)
+
+/* EVENTO PARA EVITAR QUE AL HACER CLICK DENTRO DEL MODAL, DESAPAREZCA */
+callModalCarrito.addEventListener(`click`, forEventsContCarrito)
+
+
+callBtnComprar.addEventListener(`click`, forEventBtnModalComprar)
+
+callBtnVaciarCarrito.addEventListener(`click`, forEventBtnVaciarCarrito)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

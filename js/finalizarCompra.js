@@ -111,10 +111,14 @@ const callForm = document.getElementById(`form-payment`)
 
 function chequeoDeData(){
 
-callForm.addEventListener('submit', function(event) {
-event.preventDefault();
+callForm.addEventListener('submit',contAEjecutar)
 
-/// Incluyo un sweet alert con un intervalo de tiempo para que simule un la espera de los chequeos de datos
+} 
+
+
+function contAEjecutar(e){
+    e.preventDefault()
+    /// Incluyo un sweet alert con un intervalo de tiempo para que simule un la espera de los chequeos de datos
 let timerInterval
 Swal.fire({
 title: 'Procesando su compra',
@@ -156,9 +160,10 @@ if (result.dismiss === Swal.DismissReason.timer) {
         });
 }
 })
+}
 
-});
-} 
+
+
 
 //////////////////////////////llamada del nodo selector para despues inyectarle las options/////////////////////////////////
 let callSelector = document.getElementById(`selector`)
