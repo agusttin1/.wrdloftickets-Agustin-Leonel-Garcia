@@ -18,7 +18,7 @@ background-repeat: no-repeat;
 }
 .cont-main{
     display: flex;
-   margin-bottom: 50px;
+
     padding: 15px;
 justify-content: center;
     height: 100%;
@@ -27,9 +27,10 @@ justify-content: center;
 }
 
 .paymentCont{
-    margin-top: 50px;
+
     display: flex;
-    height: auto;
+   height: 100%;
+   margin-bottom: 50px;
 
 }
 
@@ -208,3 +209,12 @@ padding: 0;
 .removehide{
     display: block;
 }
+
+@media (min-width: 320px) and (max-width: 600px) {
+.cont-main{
+    flex-direction: column;
+
+}
+
+   
+    }  

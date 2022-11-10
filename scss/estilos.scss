@@ -56,11 +56,12 @@ $color1 :  #e9e41d;
     background-image: url(../images/img-banner-inicio/banner-inicio.jpg);
     background-size: cover;
 background-repeat: no-repeat;
+padding: 20px;
 }
 
   .container-login{
 
-    width: 600px;
+    width: 100%;
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 5px 10px black;
@@ -142,7 +143,8 @@ background-repeat: no-repeat;
     .container-register{
         @extend .container-login;
         top: 0;
-        width: 800px;
+        width: 100%;
+        max-width: 500px;
       
     
     }

@@ -9,13 +9,14 @@ header {
   background-color: transparent;
   height: auto;
   width: 100%;
+
   position: fixed;
   border-top: rgb(233, 228, 29) 5px solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 99999;
-  padding: 40px 100px;
+
   transition:  all 0.9s ease-in-out;
   
 
@@ -168,7 +169,9 @@ margin-left: 40px;
 
 .home-inicio .home-text .btn {
   text-decoration: none;
-  font-family: "Bungee";
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: 800px;
   color: #e9e41d;
   border: 1px solid #e9e41d;
   padding: 5px;
@@ -348,9 +351,48 @@ footer {
 }
 
   @media (min-width: 320px) and (max-width: 600px) {
+
+    header{
+      display: flex;
+      justify-content: space-evenly;
+
+
+
+    }
     header .cont-logo figure a img {
         height: 50px;
     }
+
+    .navAllCont{
+      justify-content: flex-end;
+      
+    }
+
+    .contUserOptions{
+      margin: 0;
+    }
+    .home-inicio .home-text .h1-text {
+      font-size: 18px;
+   
+    
+    }
+    .home-text .span-text{
+      font-size:17px;
+    }
+
+    .titulo-nosotros h2 {
+      font-size: 32px;
+      font-family: "Bungee";
+      color: #e9e41d;
+      padding: 10px;
+  }
+  .artistas .header-artistas h2 {
+    padding: 10px;
+    font-size: 32px;
+    font-family: "Bungee";
+    color: white;
+}
+   
     }  
   
   @media (min-width: 600px) and (max-width: 850px) {

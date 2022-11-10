@@ -7,9 +7,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-header .contAllMenuCarrito{
-  gap: 50px;
-}
+
 header .contAllMenuCarrito .cont-carrito-header .carrito-comprar{
     color: $color1;
 }
@@ -22,7 +20,7 @@ header .contAllMenuCarrito .cont-carrito-header .contador-compra{
 color: black;
 border: black 2px dashed;
     border-radius:50px; 
-    padding: 0 5px 0 5px;
+padding:  3px;
 
 }
 ::selection{
@@ -144,6 +142,8 @@ border: black 2px dashed;
 
 .cont-filtros .row {
     padding-bottom: 40px;
+    width: 100%;
+   
 }
 
 .cont-filtros .row .allFiltrosCont{
@@ -245,8 +245,11 @@ border: black 2px dashed;
 
 .modal-contenedor{
 position: fixed;
-width: 45%;
+width: 100%;
+max-width: 700px;
 right: 0;
+display: flex;
+flex-direction: column;
 background-color: white;
 height: 84vh;
 transform: translateX(850px);
@@ -465,7 +468,12 @@ font-family: 'Poppins';
 
 }
 
+@media (min-width: 320px) and (max-width: 600px) {
 
+   .modal-contenedor{
+    top: 110px;
+   }
+    }  
 
 
 @media (max-width:1024px){
