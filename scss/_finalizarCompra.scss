@@ -20,6 +20,7 @@ background-repeat: no-repeat;
     display: flex;
 
     padding: 15px;
+gap: 40px;
 justify-content: center;
     height: 100%;
     align-items: center;
@@ -30,15 +31,16 @@ justify-content: center;
 
     display: flex;
    height: 100%;
-   margin-bottom: 50px;
+
+
 
 }
 
 .paymentCont .cont-payment{
     display: flex;
     flex-direction: column;
-    width: 770px;
-    height: 720px;
+    width:100%;
+    height: auto;
     padding: 40px 50px;
     margin: 0 0 50px ;
     -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
@@ -107,8 +109,10 @@ margin-top: 10px;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    width: 900px;
-    height: auto;
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+ 
     margin: 0 auto;
     padding: 15px;
     text-align: center;
@@ -116,6 +120,11 @@ margin-top: 10px;
     font-family: 'Poppins';
 
     position: relative;
+}
+
+.mContAfter{
+    height: 100vh;
+    width: 100%;
 }
 
 .section-after-compra .icono{
@@ -160,8 +169,10 @@ font-weight: 800;
   display: flex;
   flex-direction: column;
   background: white;
-  margin-left: 65px;
+  
   height:auto;
+  width: 100%;
+  max-width: 600px;
 padding: 20px 40px;
 -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
 box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
@@ -210,7 +221,7 @@ padding: 0;
     display: block;
 }
 
-@media (min-width: 320px) and (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 1100px) {
 .cont-main{
     flex-direction: column;
 

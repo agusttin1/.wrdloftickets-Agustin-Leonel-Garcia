@@ -73,8 +73,10 @@ function estrucutraEntradasInFC(){
 
 //////////////////////////////Funcion contenedora de una estructura que aparece luego de completar el formulario/////////////////////////////////
 function contAfterBuy(){
-
+let callMCont = document.getElementById(`mCont`)
+callMCont.classList.remove(`hide`)
 callSectionAfterCompra.classList.remove(`hide`)
+
 
 let callDivsAfterCompra = document.createElement(`div`)
 callDivsAfterCompra.className = "section-after-compra mt-auto "
